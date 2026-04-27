@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c03y2syu5adi2"]
+
+[ext_resource type="Texture2D" uid="uid://c3f0r3fu807gt" path="res://assets/photo_2026-02-05_21-35-56.jpg" id="1_vjhcd"]
+
+[node name="Main3d" type="Node3D" unique_id=729936244]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=864724462]
+transform = Transform3D(1, 0, 0, 0, 0.035265837, 0.99937797, 0, -0.99937797, 0.035265837, 0, 0, 0)
+texture = ExtResource("1_vjhcd")
