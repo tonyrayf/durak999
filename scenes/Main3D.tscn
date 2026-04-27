@@ -7,3 +7,6 @@
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=864724462]
 transform = Transform3D(1, 0, 0, 0, 0.035265837, 0.99937797, 0, -0.99937797, 0.035265837, 0, 0, 0)
 texture = ExtResource("1_vjhcd")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=426218461]
+transform = Transform3D(1, 0, 0, 0, 0.8227397, 0.56841826, 0, -0.56841826, 0.8227397, 0, 16.42034, 15.737333)
