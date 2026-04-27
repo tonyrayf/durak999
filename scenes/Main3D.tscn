@@ -1,12 +1,24 @@
 [gd_scene format=3 uid="uid://c03y2syu5adi2"]
 
-[ext_resource type="Texture2D" uid="uid://c3f0r3fu807gt" path="res://assets/photo_2026-02-05_21-35-56.jpg" id="1_vjhcd"]
+[ext_resource type="PackedScene" uid="uid://25m24u1rxsw3" path="res://scenes/Cursor.tscn" id="2_1d72u"]
+[ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
 
 [node name="Main3d" type="Node3D" unique_id=729936244]
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=864724462]
-transform = Transform3D(1, 0, 0, 0, 0.035265837, 0.99937797, 0, -0.99937797, 0.035265837, 0, 0, 0)
-texture = ExtResource("1_vjhcd")
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=426218461]
-transform = Transform3D(1, 0, 0, 0, 0.8227397, 0.56841826, 0, -0.56841826, 0.8227397, 0, 16.42034, 15.737333)
+transform = Transform3D(1, 0, 0, 0, 0.7519779, 0.6591884, 0, -0.6591884, 0.7519779, 0, 3.2862797, 2.937605)
+
+[node name="Cursor" parent="." unique_id=668848757 instance=ExtResource("2_1d72u")]
+position = Vector2(576, 332)
+
+[node name="Card" parent="." unique_id=1076352448 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.929924, 0, -0.17644143)
+
+[node name="Card2" parent="." unique_id=1960996706 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.56515, 0, -0.17644143)
+
+[node name="Card3" parent="." unique_id=1821635361 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.87537503, 0, -0.17644143)
+
+[node name="Card4" parent="." unique_id=100137817 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.2649558, 0, -0.17644143)

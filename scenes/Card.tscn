@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://dt75flq2yfdq0"]
 
-[ext_resource type="Script" uid="uid://bgb4ebi4sx76f" path="res://scenes/card.gd" id="1_tgmmg"]
+[ext_resource type="Script" uid="uid://bgb4ebi4sx76f" path="res://scripts/card.gd" id="1_tgmmg"]
 [ext_resource type="Texture2D" uid="uid://c3f0r3fu807gt" path="res://assets/photo_2026-02-05_21-35-56.jpg" id="1_yiag5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jj7t"]
-size = Vector2(153, 206)
+[sub_resource type="BoxShape3D" id="BoxShape3D_tgmmg"]
+size = Vector3(1.472, 1.991, 0.143)
 
-[node name="Card" type="Area2D" unique_id=459551931]
+[node name="Card" type="Area3D" unique_id=1076352448]
 script = ExtResource("1_tgmmg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=359339535]
-scale = Vector2(0.159375, 0.159375)
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1827858593]
+transform = Transform3D(-0.16216695, 0, 0, 0, 0.15674181, 0, 0, 0, 1, 0, 0, 0)
 texture = ExtResource("1_yiag5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1699381822]
-position = Vector2(-0.5, -1)
-shape = SubResource("RectangleShape2D_4jj7t")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=746454981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.009)
+shape = SubResource("BoxShape3D_tgmmg")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
