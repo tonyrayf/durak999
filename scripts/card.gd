@@ -8,6 +8,7 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 		dragging = event.pressed
 
 
+
 func _process(_delta):
 	if dragging:
 		var mouse_pos = get_viewport().get_mouse_position()
