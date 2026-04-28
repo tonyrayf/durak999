@@ -13,7 +13,6 @@ class card:#класс карты
 		self.suit = s
 		self.value = v
 		get_card_name()
-		spawn_card_scene()
 
 	func get_card_name() -> void:
 		self.name = ""
@@ -22,13 +21,17 @@ class card:#класс карты
 		self.name += Values.find_key(self.value)
 		self.name_extension = self.name+".jpg"
 	
-	func spawn_card_scene() -> Node3D:#!!!НЕ ГОТОВА
-		card_scene = card_scene_preload.instantiate()
+	func spawn_card_scene() -> Node3D:#!!!НЕ ГОТОВА и почему-то не работает
+		#print("QWEQWEQWE")
+		#if not card_scene_preload:
+		#	print("Ошибка: Прелоад сцены пустой!")
+		#	return null
+		var card_scene = card_scene_preload.instantiate()
 		var sprite = card_scene.get_node("Sprite3D")
 		#sprite.texture = load("res://assets/cards/"+name_extension)#вот так будет, когда будут лежать спрайты карт
 		sprite.texture = load("res://assets/photo_2026-02-05_21-35-56.jpg")
 		card_scene.global_position = Vector3(0, 0, 0)
-		Global.cards_container.add_child(card_scene)
+		Global.cardsContainer.add_child(card_scene)
 		return card_scene
 
 enum Suits {
@@ -79,6 +82,7 @@ func take_random_card(entityToTake: int,amount: int=1) -> bool:#берёт в р
 			return false
 		else:
 			current_cards.append(availableCards.pop_back())
+			current_cards[current_cards.size()-1].spawn_card_scene()
 	return true
 
 func take_card(entityToTake: int,cardName: String) -> bool:#берёт в руку сущности карту cardID
@@ -93,6 +97,7 @@ func take_card(entityToTake: int,cardName: String) -> bool:#берёт в рук
 	else:
 		current_cards.append(availableCards[found_index])
 		availableCards.remove_at(found_index)
+		current_cards[current_cards.size()-1].spawn_card_scene()
 		return true
 
 #!!!ТОЛЬКО ЗАГОТОВКА!!!

@@ -6,9 +6,9 @@ func _ready() -> void:
 	Global.mainScene = self
 	Global.cardsContainer = self
 	
-	'''MainLogic.make_available_cards()
-	MainLogic.take_random_card(MainLogic.Entities.PLAYER,4)
+	MainLogic.make_available_cards()
 	MainLogic.take_card(MainLogic.Entities.PLAYER,"WANDS_ACE")
+	'''MainLogic.take_random_card(MainLogic.Entities.PLAYER,4)
 	MainLogic.take_random_card(MainLogic.Entities.ENEMY,4)
 	MainLogic.take_card(MainLogic.Entities.ENEMY,"SWORDS_ACE")
 	MainLogic.print_cards(MainLogic.Entities.PLAYER)
