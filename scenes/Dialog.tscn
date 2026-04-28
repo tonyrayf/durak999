@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://1y34a8lu0gk2"]
 
 [ext_resource type="Script" uid="uid://deg4sjfnio8a6" path="res://scenes/dialog.gd" id="1_ecvbg"]
+[ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="2_nfiha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eoslh"]
+font = ExtResource("2_nfiha")
+font_size = 50
 
 [node name="Dialog" type="Node2D" unique_id=794257179]
 script = ExtResource("1_ecvbg")
 
 [node name="Label" type="Label" parent="." unique_id=7590253]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 619.0
+offset_top = 987.0
+offset_right = 1336.0
+offset_bottom = 1039.0
+text = "Попов Расселл: лололололололололололол"
+label_settings = SubResource("LabelSettings_eoslh")
