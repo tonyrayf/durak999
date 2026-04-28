@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://c03y2syu5adi2"]
 
-[ext_resource type="Script" uid="uid://dglpr5yj8btus" path="res://scripts/main_logic.gd" id="1_qhbaj"]
 [ext_resource type="PackedScene" uid="uid://25m24u1rxsw3" path="res://scenes/Cursor.tscn" id="2_1d72u"]
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
 
 [node name="Main3d" type="Node3D" unique_id=729936244]
-script = ExtResource("1_qhbaj")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=426218461]
 transform = Transform3D(1, 0, 0, 0, 0.7519779, 0.6591884, 0, -0.6591884, 0.7519779, 0, 3.2862797, 2.937605)
