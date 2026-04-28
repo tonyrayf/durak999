@@ -6,10 +6,14 @@ class card:#класс карты
 	var name: String
 	var name_extension: String
 	
+	var card_scene_preload = preload("res://scenes/Card.tscn")
+	var card_scene
+	
 	func _init(s: int,v: int) -> void:
 		self.suit = s
 		self.value = v
 		get_card_name()
+		spawn_card_scene()
 
 	func get_card_name() -> void:
 		self.name = ""
@@ -17,6 +21,15 @@ class card:#класс карты
 		self.name += "_"
 		self.name += Values.find_key(self.value)
 		self.name_extension = self.name+".jpg"
+	
+	func spawn_card_scene() -> Node3D:#!!!НЕ ГОТОВА
+		card_scene = card_scene_preload.instantiate()
+		var sprite = card_scene.get_node("Sprite3D")
+		#sprite.texture = load("res://assets/cards/"+name_extension)#вот так будет, когда будут лежать спрайты карт
+		sprite.texture = load("res://assets/photo_2026-02-05_21-35-56.jpg")
+		card_scene.global_position = Vector3(0, 0, 0)
+		Global.cards_container.add_child(card_scene)
+		return card_scene
 
 enum Suits {
 	WANDS, CUPS, SWORDS, PENTACLES, HIGHARCANES,
@@ -42,28 +55,14 @@ enum Combinations {#перечисление комбинаций
 }
 
 enum Entities {#перечесление владельцов карт
-	PLAYER, ENEMY,
+	PLAYER, ENEMY, SHARED
 }
 
 var player_cards: Array[card] = [] #карты игрока
 var enemy_cards: Array[card] = [] #карты врага
-#var general_cards: Array[card] = [] #общие(мб будут не нужны)
+var shared_cards: Array[card] = [] #общие
 
 var availableCards: Array[card] #перемешанная колода карт, откуда мы их достаём
-
-func _ready() -> void:
-	make_available_cards()
-	take_card(Entities.PLAYER,"WANDS_ACE")
-	take_random_card(Entities.PLAYER,5)
-	
-	print_cards(Entities.PLAYER)
-	take_card(Entities.PLAYER,"SWORDS_TEN")
-	print_cards(Entities.PLAYER)
-	
-
-func _process(delta: float) -> void:
-	#print_cards(Entities.PLAYER)
-	pass
 
 func make_available_cards(doShuffle: bool=true) -> void:#задаёт availableCards из мастей и номиналов
 	for i in range(Suits.WANDS,Suits.PENTACLES+1):
@@ -139,6 +138,8 @@ func get_entity_cards(entity: int) -> Array[card]:#возвращает масс
 		return player_cards
 	elif(entity==Entities.ENEMY):
 		return enemy_cards
+	elif(entity==Entities.SHARED):
+		return shared_cards
 	else:
 		return []
 
