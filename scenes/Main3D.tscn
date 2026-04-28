@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://c03y2syu5adi2"]
 
 [ext_resource type="Shader" uid="uid://bnm7pk8jjs7v" path="res://shaders/pixelation.gdshader" id="1_uki8y"]
+[ext_resource type="PackedScene" uid="uid://25m24u1rxsw3" path="res://scenes/Cursor.tscn" id="2_1d72u"]
+[ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scripts/main_camera.gd" id="2_f3gxh"]
+[ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
+[ext_resource type="Texture2D" uid="uid://b4ewwgpc3li15" path="res://assets/sprites/стол_шакал.png" id="5_1iatr"]
+[ext_resource type="Texture2D" uid="uid://j7m3pwxlt4vb" path="res://assets/sprites/Снимок экрана 2026-04-28 191355.png" id="6_c0t86"]
+[ext_resource type="Texture2D" uid="uid://s64js60epcvb" path="res://assets/sprites/fire1.png" id="7_gtawn"]
+[ext_resource type="PackedScene" uid="uid://dsb73lcqsccmv" path="res://models/candle.glb" id="7_veire"]
+[ext_resource type="Texture2D" uid="uid://bk02v0jroamfd" path="res://assets/sprites/fire2.png" id="8_uki8y"]
+[ext_resource type="Texture2D" uid="uid://bkxqhd76cb7me" path="res://assets/sprites/fire3.png" id="9_pa4y5"]
+[ext_resource type="Texture2D" uid="uid://dtu437q7dj2h1" path="res://assets/sprites/fire4.png" id="10_0mw75"]
+[ext_resource type="PackedScene" uid="uid://jon43b0xhc1" path="res://models/low_poly_vintage_telephone.glb" id="12_pa4y5"]
 
 [sub_resource type="Environment" id="Environment_qhbaj"]
 background_mode = 1
@@ -40,7 +51,6 @@ animations = [{
 }]
 
 [node name="Main3d" type="Node3D" unique_id=729936244]
-script = ExtResource("1_qhbaj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=485070084]
 environment = SubResource("Environment_qhbaj")
@@ -81,27 +91,4 @@ shaded = true
 texture = ExtResource("6_c0t86")
 
 [node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
-transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 5.9210253, 0.02772379, -3.482665)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Candle" unique_id=562023301]
-transform = Transform3D(1.9417477, 0, 0, 0, 1.9417477, 0, 0, 0, 1.9417477, -0.0493021, 7.5544186, 0.055337906)
-light_color = Color(0.95651716, 0.6572838, 0.4094981, 1)
-light_energy = 16.0
-light_size = 1.0
-shadow_enabled = true
-omni_range = 17.162016
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Candle" unique_id=1112318450]
-transform = Transform3D(2.085, 0, 0, 0, 2.085, 0, 0, 0, 2.085, 0.05722618, 7.2816935, 0)
-sprite_frames = SubResource("SpriteFrames_6mlb6")
-autoplay = "default"
-frame_progress = 0.25289065
-
-[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Candle" unique_id=964526866]
-transform = Transform3D(-9.113825e-08, 0, 2.085, 0, 2.085, 0, -2.085, 0, -9.113825e-08, 0.05722618, 7.2816935, 0)
-sprite_frames = SubResource("SpriteFrames_6mlb6")
-autoplay = "default"
-frame_progress = 0.4774973
-
-[node name="Phone" parent="." unique_id=990321613 instance=ExtResource("12_pa4y5")]
-transform = Transform3D(14.968776, 0, -27.12372, 0, 30.98, 0, 27.12372, 0, 14.968776, 5.491452, -4.7683716e-07, -0.9065194)
+transform = Transform3D(0.515, 0, 0
