@@ -1,21 +1,16 @@
 [gd_scene format=3 uid="uid://1y34a8lu0gk2"]
 
 [ext_resource type="Script" uid="uid://deg4sjfnio8a6" path="res://scenes/dialog.gd" id="1_ecvbg"]
-[ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="2_nfiha"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_eoslh"]
-font = ExtResource("2_nfiha")
-font_size = 62
+[ext_resource type="LabelSettings" uid="uid://nlggdinhhi" path="res://resources/label_settings.tres" id="2_nfiha"]
 
 [node name="Dialog" type="Node2D" unique_id=794257179 node_paths=PackedStringArray("label")]
 script = ExtResource("1_ecvbg")
-full_text = Array[String](["0Здравствуйте...", "0Это та самая контора по делам с духами? ", "1Здравствуйте. Так точно, сэр.", "0Мне срочно нужна ваша помощь.", "1Что у вас случилось?", "0Понимаете. Я тренер по боевым искусствам.", "0Мой ученик..... умер пытаясь совершить один сложнейший трюк.", "1Соболезную вам.", "0Так вот мне нужно чтобы вы упокоили его душу.", "0Мы уже месяцами с моими учениками слышим его плач по ночам.", "0Я знаю этот голос. Это точно он.", "1Имя и фамилия?", "0Иоанн Бубнов.", "1Дата рождения?", "019 марта 19XX года.", "1Оплата после ритуала.", "1Иначе вас настигнет порча.", "0Я понимаю.", "1Досвидания."])
+full_text = Array[String](["0Здравствуйте...", "0Это та самая контора по делам с духами? ", "1Здравствуйте. Так точно, сэр.", "0Мне срочно нужна ваша помощь.", "1Что у вас случилось?", "0Понимаете. Я тренер по боевым искусствам.", "0Мой ученик..... умер пытаясь совершить один сложнейший трюк.", "1Соболезную вам.", "0Так вот мне нужно чтобы вы упокоили его душу.", "0Мы уже месяцами с моими учениками слышим его плач по ночам.", "0Я знаю этот голос. Это точно он.", "1Имя и фамилия?", "0Иоанн Бубнов.", "1Дата рождения?", "019 марта 19XX года.", "1Оплата после ритуала.", "1Иначе вас настигнет кара.", "0Я понимаю.", "1Досвидания."])
 label = NodePath("Label")
 
 [node name="Label" type="Label" parent="." unique_id=7590253]
 offset_top = 864.0
 offset_right = 1920.0
 offset_bottom = 1080.0
-text = "Попов Расселл: лололололололололололол"
-label_settings = SubResource("LabelSettings_eoslh")
+label_settings = ExtResource("2_nfiha")
 horizontal_alignment = 1

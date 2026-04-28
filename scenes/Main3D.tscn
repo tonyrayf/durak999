@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://c03y2syu5adi2"]
 
+[ext_resource type="Script" uid="uid://b83lkik4xgk5p" path="res://scenes/main_scene.gd" id="1_opinn"]
 [ext_resource type="Shader" uid="uid://bnm7pk8jjs7v" path="res://shaders/pixelation.gdshader" id="1_uki8y"]
 [ext_resource type="PackedScene" uid="uid://buufho8see06q" path="res://models/glass.glb" id="2_0mw75"]
 [ext_resource type="PackedScene" uid="uid://25m24u1rxsw3" path="res://scenes/Cursor.tscn" id="2_1d72u"]
 [ext_resource type="PackedScene" uid="uid://1y34a8lu0gk2" path="res://scenes/Dialog.tscn" id="2_2hcnx"]
 [ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scripts/main_camera.gd" id="2_f3gxh"]
+[ext_resource type="LabelSettings" uid="uid://nlggdinhhi" path="res://resources/label_settings.tres" id="3_2dsbo"]
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
 [ext_resource type="Texture2D" uid="uid://l75vu660xh1w" path="res://assets/sprites/table2x.png" id="5_2hcnx"]
-[ext_resource type="Material" uid="uid://vp44pffyqbjn" path="res://new_compressed_texture_2d.tres" id="5_e7f4t"]
 [ext_resource type="Texture2D" uid="uid://bdm1ed024rdyi" path="res://assets/sprites/cards/card2.png" id="6_2hcnx"]
 [ext_resource type="Shader" uid="uid://cld04hhi7xs4r" path="res://shaders/gradient_fade.gdshader" id="6_j5406"]
 [ext_resource type="Texture2D" uid="uid://dl7i50yk3hn4v" path="res://assets/sprites/fallen/ilya.png" id="6_nujbj"]
@@ -22,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://dtu437q7dj2h1" path="res://assets/sprites/fire/fire4.png" id="10_0mw75"]
 [ext_resource type="PackedScene" uid="uid://dmote6oeo1nyx" path="res://models/tel1.glb" id="14_nujbj"]
 [ext_resource type="PackedScene" uid="uid://b3sfwp85pvaev" path="res://models/tel2.glb" id="15_j5406"]
+[ext_resource type="AudioStream" uid="uid://derkiv31gj2j2" path="res://assets/sounds/phone_ringing.ogg" id="18_2dsbo"]
+[ext_resource type="Script" uid="uid://soln7wk7gx1w" path="res://scripts/phone_script.gd" id="20_gb54i"]
+[ext_resource type="Shader" uid="uid://bijwg431d86mn" path="res://shaders/outline.gdshader" id="22_f0dhp"]
 [ext_resource type="PackedScene" uid="uid://ddngg3tqsp24c" path="res://models/crystal.glb" id="23_sto1q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa4y5"]
@@ -75,6 +79,229 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvjsx"]
+render_priority = 0
+shader = ExtResource("22_f0dhp")
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/outline_width = 8.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvjsx"]
+radius = 1.0072088
+
+[sub_resource type="Animation" id="Animation_m4pur"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tel2:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone/telephone_telephone_MAT_0:material_overlay:shader_parameter/outline_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.06666667, 0, 0.06666667, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8dysu"]
+resource_name = "pick_up_trubka"
+length = 0.13333334
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tel2:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, 0.026844766, 0.12080145, -0.020913756, -0.020133575, 0, 0),
+"times": PackedFloat32Array(0, 0.12548253)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone/telephone_telephone_MAT_0:material_overlay:shader_parameter/outline_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.06666667, 0, 0.06666667, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_noibx"]
+resource_name = "put_trubka"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tel2:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.12080145, -0.25, 0, 0.13333334, -0.0038349703, 0, -0.033099167, 0.020133575, 0, 0),
+"times": PackedFloat32Array(0, 0.198595)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone/telephone_telephone_MAT_0:material_overlay:shader_parameter/outline_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_noibx"]
+_data = {
+&"RESET": SubResource("Animation_m4pur"),
+&"pick_up_trubka": SubResource("Animation_8dysu"),
+&"put_trubka": SubResource("Animation_noibx")
+}
+
+[sub_resource type="Animation" id="Animation_opinn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone/tel2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/DayLabel:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gb54i"]
+resource_name = "phone_pickup"
+
+[sub_resource type="Animation" id="Animation_cvjsx"]
+resource_name = "phone_ringin"
+length = 3.13
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone/tel2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666666, 0.13333333, 0.2, 0.26666665, 0.33333334, 0.7, 0.76666665, 0.8333333, 0.9, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0012392348, -0.007604294, -0.1728267), Vector3(-0.037767284, -0.032692894, 0.109093726), Vector3(0.0012392348, -0.007604294, -0.1728267), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.0012392348, -0.007604294, -0.1728267), Vector3(-0.037767284, -0.032692894, 0.109093726), Vector3(0.0012392348, -0.007604294, -0.1728267), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2dsbo"]
+resource_name = "start"
+length = 3.7
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/DayLabel:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0, 1, -0.16666667, -0.16666667, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 2.3666666, 3.3)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0],
+"method": &"start_day"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_phone_ringing"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m4pur"]
+_data = {
+&"RESET": SubResource("Animation_opinn"),
+&"phone_pickup": SubResource("Animation_gb54i"),
+&"phone_ringing": SubResource("Animation_cvjsx"),
+&"start": SubResource("Animation_2dsbo")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bs5pm"]
+load_path = "res://.godot/imported/8fb98f4d-7138-46f4-87ea-7013a0aa1e32.png-3bd52d489aa7b1ff9dcf554d4786fe20.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4pur"]
+albedo_texture = SubResource("CompressedTexture2D_bs5pm")
+uv1_scale = Vector3(0.51, 0.085, 0.52)
+uv1_offset = Vector3(0.5, 0, -0.51)
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opinn"]
 albedo_texture = ExtResource("6_2hcnx")
 uv1_scale = Vector3(0.51, 0.085, 0.52)
@@ -99,11 +326,25 @@ albedo_color = Color(0.56078434, 0.7921569, 0.972549, 0.627451)
 emission_enabled = true
 emission = Color(0.62689465, 0.8301609, 1.0418965, 1)
 
-[node name="Main3d" type="Node3D" unique_id=729936244]
+[node name="Main3d" type="Node3D" unique_id=729936244 node_paths=PackedStringArray("day_label", "anim_player")]
+script = ExtResource("1_opinn")
+day_label = NodePath("CanvasLayer/DayLabel")
+anim_player = NodePath("AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=803795169]
 
 [node name="Dialog" parent="CanvasLayer" unique_id=794257179 instance=ExtResource("2_2hcnx")]
+autostart = false
+
+[node name="DayLabel" type="Label" parent="CanvasLayer" unique_id=1949037490]
+modulate = Color(1, 1, 1, 0)
+offset_left = 2.0
+offset_top = 869.0
+offset_right = 1919.0
+offset_bottom = 1080.0
+text = "День 1"
+label_settings = ExtResource("3_2dsbo")
+horizontal_alignment = 1
 
 [node name="PixelationRect" type="ColorRect" parent="CanvasLayer" unique_id=1883102264]
 material = SubResource("ShaderMaterial_pa4y5")
@@ -117,6 +358,7 @@ environment = SubResource("Environment_qhbaj")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=426218461]
 transform = Transform3D(1, 0, 0, 0, 0.8931203, 0.44981784, 0, -0.44981784, 0.8931203, 0, 3.2862797, 3.3154807)
 script = ExtResource("2_f3gxh")
+force_free_look = false
 
 [node name="Cursor" parent="." unique_id=668848757 instance=ExtResource("2_1d72u")]
 position = Vector2(576, 332)
@@ -136,6 +378,7 @@ spot_angle = 19.50645
 
 [node name="Fallen" type="Sprite3D" parent="." unique_id=741488087]
 transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, -0.16100025, 2.7090683, -10.426357)
+visible = false
 material_override = SubResource("ShaderMaterial_4n3rj")
 shaded = true
 texture = ExtResource("6_nujbj")
@@ -173,37 +416,64 @@ sprite_frames = SubResource("SpriteFrames_6mlb6")
 autoplay = "default"
 frame_progress = 0.4774973
 
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1959719267]
+transform = Transform3D(1, 0, 0, 0, -0.10487558, 0.9944853, 0, -0.9944853, -0.10487558, 3.6966243, 2.323099, -0.9691222)
+
 [node name="Phone" type="Node3D" parent="." unique_id=434322494]
-transform = Transform3D(0.73081785, 0, -0.68257254, 0, 1, 0, 0.68257254, 0, 0.73081785, 5.6466203, 0, -0.9691222)
+transform = Transform3D(0.73081785, 0, -0.68257254, 0, 1, 0, 0.68257254, 0, 0.73081785, 3.6966243, 0, -0.9691222)
 
 [node name="tel1" parent="Phone" unique_id=1147220720 instance=ExtResource("14_nujbj")]
 transform = Transform3D(30.145, 0, 0, 0, 30.145, 0, 0, 0, 30.145, 0, 0, 0)
 
 [node name="tel2" parent="Phone" unique_id=24041030 instance=ExtResource("15_j5406")]
-transform = Transform3D(30.1, 0, 0, 0, 30.1, 0, 0, 0, 30.1, 0, 0, 0)
+transform = Transform3D(30.09999, 0, 0, 0, 30.1, 0, 0, 0, 30.099998, 0, 0, 0)
+
+[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 957945559) index="0" unique_id=1165242394]
+material_overlay = SubResource("ShaderMaterial_cvjsx")
+
+[node name="Area3D" type="Area3D" parent="Phone" unique_id=1400587507 node_paths=PackedStringArray("phone_trubka", "anim_player")]
+script = ExtResource("20_gb54i")
+phone_trubka = NodePath("../tel2")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Phone/Area3D" unique_id=201679815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2983237, 0)
+shape = SubResource("SphereShape3D_cvjsx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Phone" unique_id=1444011938]
+libraries/ = SubResource("AnimationLibrary_noibx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1393510726]
+libraries/ = SubResource("AnimationLibrary_m4pur")
+autoplay = &"start"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1988902233]
+stream = ExtResource("18_2dsbo")
 
 [node name="Card" parent="." unique_id=1076352448 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -2.814694, 0.0007146597, -0.17644143)
+visible = false
 
 [node name="Cube" parent="Card/blankcard" parent_id_path=PackedInt32Array(1076352448, 438004789) index="0" unique_id=659910391]
-surface_material_override/0 = ExtResource("5_e7f4t")
+surface_material_override/0 = SubResource("StandardMaterial3D_m4pur")
 
 [node name="Card2" parent="." unique_id=884679486 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0163474, 0, -0.17644143)
+visible = false
 
 [node name="Cube" parent="Card2/blankcard" parent_id_path=PackedInt32Array(884679486, 438004789) index="0" unique_id=659910391]
 surface_material_override/0 = SubResource("StandardMaterial3D_opinn")
 
 [node name="Card3" parent="." unique_id=528795771 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0.9666822, 0, -0.17644143)
+visible = false
 
 [node name="Cube" parent="Card3/blankcard" parent_id_path=PackedInt32Array(528795771, 438004789) index="0" unique_id=659910391]
 surface_material_override/0 = SubResource("StandardMaterial3D_gb54i")
 
 [node name="Card4" parent="." unique_id=1827676108 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 2.8479621, 0.029775381, -0.17644143)
+visible = false
 
 [node name="Cube" parent="Card4/blankcard" parent_id_path=PackedInt32Array(1827676108, 438004789) index="0" unique_id=659910391]
 surface_material_override/0 = SubResource("StandardMaterial3D_cvjsx")
@@ -222,7 +492,11 @@ light_specular = 0.0
 omni_range = 4.235962
 omni_attenuation = -0.782
 
+[connection signal="mouse_entered" from="Phone/Area3D" to="Phone/Area3D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phone/Area3D" to="Phone/Area3D" method="_on_mouse_exited"]
+
 [editable path="Glass"]
+[editable path="Phone/tel2"]
 [editable path="Card"]
 [editable path="Card/blankcard"]
 [editable path="Card2"]

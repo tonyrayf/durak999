@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bgb4ebi4sx76f" path="res://scripts/card.gd" id="1_tgmmg"]
 [ext_resource type="PackedScene" uid="uid://ddyimfipsxl1e" path="res://models/blankcard.glb" id="3_4dx8l"]
-[ext_resource type="Material" uid="uid://v4ea1yi183p7" path="res://card_material.tres" id="3_qf083"]
+[ext_resource type="Material" uid="uid://v4ea1yi183p7" path="res://resources/card_material.tres" id="3_qf083"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tgmmg"]
 size = Vector3(0.7, 1, 0.01)

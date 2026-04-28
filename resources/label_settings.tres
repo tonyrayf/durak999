@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://nlggdinhhi"]
+
+[ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="1_8aso4"]
+
+[resource]
+font = ExtResource("1_8aso4")
+font_size = 62

@@ -2,7 +2,7 @@ extends Camera3D
 
 
 @export var free_look : bool = false
-var force_free_look : bool = true
+@export var force_free_look : bool = true
 @export var sensitivity : float = 0.005
 @export var max_tilt : Vector2 = Vector2(40, 50)        # в градусах
 

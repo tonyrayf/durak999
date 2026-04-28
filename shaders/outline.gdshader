@@ -1,8 +1,8 @@
 shader_type spatial;
-render_mode unshaded, cull_disabled;
+render_mode unshaded, cull_front;
 
 uniform vec4 outline_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-uniform float outline_width = 1.0;
+uniform float outline_width = 8.0;
 
 void vertex() {
 	VERTEX += NORMAL * outline_width * 0.01;
