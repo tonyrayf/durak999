@@ -6,22 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://1y34a8lu0gk2" path="res://scenes/Dialog.tscn" id="2_2hcnx"]
 [ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scripts/main_camera.gd" id="2_f3gxh"]
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
-[ext_resource type="Texture2D" uid="uid://b4ewwgpc3li15" path="res://assets/sprites/table.png" id="5_1iatr"]
+[ext_resource type="Texture2D" uid="uid://l75vu660xh1w" path="res://assets/sprites/table2x.png" id="5_2hcnx"]
 [ext_resource type="Material" uid="uid://vp44pffyqbjn" path="res://new_compressed_texture_2d.tres" id="5_e7f4t"]
 [ext_resource type="Texture2D" uid="uid://bdm1ed024rdyi" path="res://assets/sprites/cards/card2.png" id="6_2hcnx"]
 [ext_resource type="Shader" uid="uid://cld04hhi7xs4r" path="res://shaders/gradient_fade.gdshader" id="6_j5406"]
 [ext_resource type="Texture2D" uid="uid://dl7i50yk3hn4v" path="res://assets/sprites/fallen/ilya.png" id="6_nujbj"]
+[ext_resource type="Texture2D" uid="uid://bknbv0emlvou6" path="res://assets/sprites/table_normal_map.png" id="6_sto1q"]
 [ext_resource type="Texture2D" uid="uid://s64js60epcvb" path="res://assets/sprites/fire/fire1.png" id="7_gtawn"]
 [ext_resource type="Texture2D" uid="uid://ha1dusi18mf7" path="res://assets/sprites/cards/card4.png" id="7_sto1q"]
 [ext_resource type="PackedScene" uid="uid://dsb73lcqsccmv" path="res://models/candle.glb" id="7_veire"]
 [ext_resource type="Texture2D" uid="uid://bx1kxmlo1qwg5" path="res://assets/sprites/cards/card3.png" id="8_2dsbo"]
 [ext_resource type="Script" uid="uid://c1k3vn6gamqde" path="res://scripts/fallen_visuals.gd" id="8_4n3rj"]
-[ext_resource type="Material" uid="uid://pcuk1da5vj2l" path="res://models/window_surface_material.tres" id="8_6mlb6"]
 [ext_resource type="Texture2D" uid="uid://bk02v0jroamfd" path="res://assets/sprites/fire/fire2.png" id="8_uki8y"]
 [ext_resource type="Texture2D" uid="uid://bkxqhd76cb7me" path="res://assets/sprites/fire/fire3.png" id="9_pa4y5"]
 [ext_resource type="Texture2D" uid="uid://dtu437q7dj2h1" path="res://assets/sprites/fire/fire4.png" id="10_0mw75"]
 [ext_resource type="PackedScene" uid="uid://dmote6oeo1nyx" path="res://models/tel1.glb" id="14_nujbj"]
 [ext_resource type="PackedScene" uid="uid://b3sfwp85pvaev" path="res://models/tel2.glb" id="15_j5406"]
+[ext_resource type="PackedScene" uid="uid://ddngg3tqsp24c" path="res://models/crystal.glb" id="23_sto1q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa4y5"]
 shader = ExtResource("1_uki8y")
@@ -31,28 +32,14 @@ shader_parameter/pixel_size = 3.000000095
 background_mode = 1
 background_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opinn"]
-albedo_texture = ExtResource("6_2hcnx")
-uv1_scale = Vector3(0.51, 0.085, 0.52)
-uv1_offset = Vector3(0.5, 0, -0.51)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gb54i"]
-albedo_texture = ExtResource("7_sto1q")
-uv1_scale = Vector3(0.51, 0.085, 0.52)
-uv1_offset = Vector3(0.5, 0, -0.51)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvjsx"]
-albedo_texture = ExtResource("8_2dsbo")
-uv1_scale = Vector3(0.51, 0.085, 0.52)
-uv1_offset = Vector3(0.5, 0, -0.51)
-uv1_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0t86"]
-albedo_texture = ExtResource("5_1iatr")
-uv1_scale = Vector3(-2.135, -1.86, -2.135)
-uv1_offset = Vector3(0.565, -0.185, 0)
+albedo_texture = ExtResource("5_2hcnx")
+normal_enabled = true
+normal_scale = 0.57
+normal_texture = ExtResource("6_sto1q")
+uv1_scale = Vector3(0.045, 0.35, -0.085)
+uv1_offset = Vector3(0.5, -0.185, 0.51)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_qhbaj"]
 material = SubResource("StandardMaterial3D_c0t86")
@@ -88,6 +75,30 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opinn"]
+albedo_texture = ExtResource("6_2hcnx")
+uv1_scale = Vector3(0.51, 0.085, 0.52)
+uv1_offset = Vector3(0.5, 0, -0.51)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gb54i"]
+albedo_texture = ExtResource("7_sto1q")
+uv1_scale = Vector3(0.51, 0.085, 0.52)
+uv1_offset = Vector3(0.5, 0, -0.51)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvjsx"]
+albedo_texture = ExtResource("8_2dsbo")
+uv1_scale = Vector3(0.51, 0.085, 0.52)
+uv1_offset = Vector3(0.5, 0, -0.51)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sto1q"]
+transparency = 1
+albedo_color = Color(0.56078434, 0.7921569, 0.972549, 0.627451)
+emission_enabled = true
+emission = Color(0.62689465, 0.8301609, 1.0418965, 1)
+
 [node name="Main3d" type="Node3D" unique_id=729936244]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=803795169]
@@ -109,6 +120,69 @@ script = ExtResource("2_f3gxh")
 
 [node name="Cursor" parent="." unique_id=668848757 instance=ExtResource("2_1d72u")]
 position = Vector2(576, 332)
+
+[node name="Table" type="MeshInstance3D" parent="." unique_id=643304323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1716361, -3.8096373)
+mesh = SubResource("BoxMesh_qhbaj")
+
+[node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
+transform = Transform3D(-0.016413487, 0.16785285, -0.98567545, 0.002794702, 0.98581207, 0.16782959, 0.9998614, -4.658627e-10, -0.016649714, -30.306381, 5.9393806, -4.627087)
+visible = false
+light_color = Color(0.8103501, 0.9999997, 0.9973399, 1)
+shadow_enabled = true
+spot_range = 55.404995
+spot_attenuation = -0.38
+spot_angle = 19.50645
+
+[node name="Fallen" type="Sprite3D" parent="." unique_id=741488087]
+transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, -0.16100025, 2.7090683, -10.426357)
+material_override = SubResource("ShaderMaterial_4n3rj")
+shaded = true
+texture = ExtResource("6_nujbj")
+script = ExtResource("8_4n3rj")
+
+[node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
+transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -17.018135, 1.3739176, -4.6606407)
+
+[node name="Cube_008" parent="Glass" index="6" unique_id=617329509]
+visible = false
+
+[node name="Cube_009" parent="Glass" index="7" unique_id=1451099581]
+visible = false
+
+[node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
+transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 5.9210253, 0.02772379, -3.482665)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle" unique_id=562023301]
+transform = Transform3D(1.9417477, 0, 0, 0, 1.9417477, 0, 0, 0, 1.9417477, -0.0493021, 7.5544186, 0.055337906)
+light_color = Color(0.95651716, 0.6572838, 0.4094981, 1)
+light_energy = 16.0
+light_size = 1.0
+shadow_enabled = true
+omni_range = 17.162016
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Candle" unique_id=1112318450]
+transform = Transform3D(2.085, 0, 0, 0, 2.085, 0, 0, 0, 2.085, 0.05722618, 7.2816935, 0)
+sprite_frames = SubResource("SpriteFrames_6mlb6")
+autoplay = "default"
+frame_progress = 0.25289065
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Candle" unique_id=964526866]
+transform = Transform3D(-9.113825e-08, 0, 2.085, 0, 2.085, 0, -2.085, 0, -9.113825e-08, 0.05722618, 7.2816935, 0)
+sprite_frames = SubResource("SpriteFrames_6mlb6")
+autoplay = "default"
+frame_progress = 0.4774973
+
+[node name="Phone" type="Node3D" parent="." unique_id=434322494]
+transform = Transform3D(0.73081785, 0, -0.68257254, 0, 1, 0, 0.68257254, 0, 0.73081785, 5.6466203, 0, -0.9691222)
+
+[node name="tel1" parent="Phone" unique_id=1147220720 instance=ExtResource("14_nujbj")]
+transform = Transform3D(30.145, 0, 0, 0, 30.145, 0, 0, 0, 30.145, 0, 0, 0)
+
+[node name="tel2" parent="Phone" unique_id=24041030 instance=ExtResource("15_j5406")]
+transform = Transform3D(30.1, 0, 0, 0, 30.1, 0, 0, 0, 30.1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1393510726]
 
 [node name="Card" parent="." unique_id=1076352448 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -2.814694, 0.0007146597, -0.17644143)
@@ -134,76 +208,21 @@ transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 2.84
 [node name="Cube" parent="Card4/blankcard" parent_id_path=PackedInt32Array(1827676108, 438004789) index="0" unique_id=659910391]
 surface_material_override/0 = SubResource("StandardMaterial3D_cvjsx")
 
-[node name="Table" type="MeshInstance3D" parent="." unique_id=643304323]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1716361, -3.8096373)
-mesh = SubResource("BoxMesh_qhbaj")
+[node name="Crystal" parent="." unique_id=1992459748 instance=ExtResource("23_sto1q")]
+transform = Transform3D(0.810277, 0, 0.5860471, 0, 1, 0, -0.5860471, 0, 0.810277, -6.2034903, 0, -2.4443057)
 
-[node name="Fallen" type="Sprite3D" parent="." unique_id=741488087]
-transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, -0.16100025, 2.7090683, -10.426357)
-material_override = SubResource("ShaderMaterial_4n3rj")
-shaded = true
-texture = ExtResource("6_nujbj")
-script = ExtResource("8_4n3rj")
+[node name="Cylinder" parent="Crystal" index="0" unique_id=2006000935]
+surface_material_override/1 = SubResource("StandardMaterial3D_sto1q")
 
-[node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
-transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -17.018135, 1.3739176, -4.6606407)
-
-[node name="Plane" parent="Glass" index="8" unique_id=1402214604]
-surface_material_override/0 = ExtResource("8_6mlb6")
-
-[node name="Plane_001" parent="Glass" index="9" unique_id=1759263593]
-surface_material_override/0 = ExtResource("8_6mlb6")
-
-[node name="Plane_003" parent="Glass" index="11" unique_id=1139408777]
-surface_material_override/0 = ExtResource("8_6mlb6")
-
-[node name="Plane_004" parent="Glass" index="12" unique_id=1314980424]
-surface_material_override/0 = ExtResource("8_6mlb6")
-
-[node name="Plane_005" parent="Glass" index="13" unique_id=1525810252]
-surface_material_override/0 = ExtResource("8_6mlb6")
-
-[node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
-transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 5.9210253, 0.02772379, -3.482665)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Candle" unique_id=562023301]
-transform = Transform3D(1.9417477, 0, 0, 0, 1.9417477, 0, 0, 0, 1.9417477, -0.0493021, 7.5544186, 0.055337906)
-light_color = Color(0.95651716, 0.6572838, 0.4094981, 1)
-light_energy = 16.0
+[node name="OmniLight3D" type="OmniLight3D" parent="Crystal" unique_id=1523867919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6030656, 0)
+light_color = Color(0.61032647, 0.84251195, 0.9639538, 1)
 light_size = 1.0
-shadow_enabled = true
-omni_range = 17.162016
+light_specular = 0.0
+omni_range = 4.235962
+omni_attenuation = -0.782
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Candle" unique_id=1112318450]
-transform = Transform3D(2.085, 0, 0, 0, 2.085, 0, 0, 0, 2.085, 0.05722618, 7.2816935, 0)
-sprite_frames = SubResource("SpriteFrames_6mlb6")
-autoplay = "default"
-frame_progress = 0.25289065
-
-[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Candle" unique_id=964526866]
-transform = Transform3D(-9.113825e-08, 0, 2.085, 0, 2.085, 0, -2.085, 0, -9.113825e-08, 0.05722618, 7.2816935, 0)
-sprite_frames = SubResource("SpriteFrames_6mlb6")
-autoplay = "default"
-frame_progress = 0.4774973
-
-[node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
-transform = Transform3D(-0.016413486, 0.16785285, -0.98567545, 0.0027947018, 0.98581207, 0.16782957, 0.9998613, -9.594663e-10, -0.01664971, -30.306381, 5.9393806, -4.627087)
-visible = false
-light_color = Color(0.8103501, 0.9999997, 0.9973399, 1)
-shadow_enabled = true
-spot_range = 55.404995
-spot_attenuation = -0.38
-spot_angle = 19.50645
-
-[node name="Phone" type="Node3D" parent="." unique_id=434322494]
-transform = Transform3D(0.73081785, 0, -0.68257254, 0, 1, 0, 0.68257254, 0, 0.73081785, 5.6466203, 0, -0.9691222)
-
-[node name="tel1" parent="Phone" unique_id=1147220720 instance=ExtResource("14_nujbj")]
-transform = Transform3D(30.145, 0, 0, 0, 30.145, 0, 0, 0, 30.145, 0, 0, 0)
-
-[node name="tel2" parent="Phone" unique_id=24041030 instance=ExtResource("15_j5406")]
-transform = Transform3D(30.1, 0, 0, 0, 30.1, 0, 0, 0, 30.1, 0, 0, 0)
-
+[editable path="Glass"]
 [editable path="Card"]
 [editable path="Card/blankcard"]
 [editable path="Card2"]
@@ -212,4 +231,4 @@ transform = Transform3D(30.1, 0, 0, 0, 30.1, 0, 0, 0, 30.1, 0, 0, 0)
 [editable path="Card3/blankcard"]
 [editable path="Card4"]
 [editable path="Card4/blankcard"]
-[editable path="Glass"]
+[editable path="Crystal"]

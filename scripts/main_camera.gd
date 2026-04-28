@@ -2,6 +2,7 @@ extends Camera3D
 
 
 @export var free_look : bool = false
+var force_free_look : bool = true
 @export var sensitivity : float = 0.005
 @export var max_tilt : Vector2 = Vector2(40, 50)        # в градусах
 
@@ -30,10 +31,13 @@ func _ready() -> void:
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_free_look"):
+	if not force_free_look:
+		if Input.is_action_just_pressed("ui_free_look"):
+			toggle_free_look(true)
+		elif Input.is_action_just_released("ui_free_look"):
+			toggle_free_look(false)
+	elif not free_look:
 		toggle_free_look(true)
-	elif Input.is_action_just_released("ui_free_look"):
-		toggle_free_look(false)
 	
 	if not free_look:
 		return

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c48u88fwrj14k"]
+
+[ext_resource type="PackedScene" uid="uid://buufho8see06q" path="res://models/glass.glb" id="1_e1s7p"]
+
+[node name="Glass" unique_id=1140095715 instance=ExtResource("1_e1s7p")]
+
+[node name="Cube_008" parent="." index="6" unique_id=617329509]
+visible = false
+
+[node name="Cube_009" parent="." index="7" unique_id=1451099581]
+visible = false

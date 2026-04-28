@@ -21,15 +21,12 @@ class card:#класс карты
 		self.name += Values.find_key(self.value)
 		self.name_extension = self.name+".jpg"
 	
-	func spawn_card_scene() -> Node3D:#!!!НЕ ГОТОВА и почему-то не работает
-		#print("QWEQWEQWE")
-		#if not card_scene_preload:
-		#	print("Ошибка: Прелоад сцены пустой!")
-		#	return null
+	func spawn_card_scene() -> Node3D:
+		if not card_scene_preload:
+			print("Ошибка: Прелоад сцены пустой!")
+			return null
 		var card_scene = card_scene_preload.instantiate()
-		var sprite = card_scene.get_node("Sprite3D")
 		#sprite.texture = load("res://assets/cards/"+name_extension)#вот так будет, когда будут лежать спрайты карт
-		sprite.texture = load("res://assets/photo_2026-02-05_21-35-56.jpg")
 		card_scene.global_position = Vector3(0, 0, 0)
 		Global.cardsContainer.add_child(card_scene)
 		return card_scene

@@ -4,12 +4,12 @@ extends Node2D
 const colors : Array = \
 	[
 		Color(1.0, 1.0, 1.0, 1.0),		# цвет закзчика
-		Color(0.392, 0.493, 0.934),		# цвет гг
+		Color(0.618, 0.699, 0.972, 1.0),		# цвет гг
 		Color(0.262, 0.725, 0.556, 1.0),	# цвет духа
 	]
 
 @export var full_text : Array[String] = []
-@export var typing_speed : float = 0.4
+@export var typing_speed : float = 0.3
 @export var autostart : bool = true
 
 # референсы
