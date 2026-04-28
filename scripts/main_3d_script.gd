@@ -6,15 +6,47 @@ func _ready() -> void:
 	Global.mainScene = self
 	Global.cardsContainer = self
 	
-	MainLogic.make_available_cards()
-	MainLogic.take_card(MainLogic.Entities.PLAYER,"WANDS_ACE")
-	'''MainLogic.take_random_card(MainLogic.Entities.PLAYER,4)
-	MainLogic.take_random_card(MainLogic.Entities.ENEMY,4)
-	MainLogic.take_card(MainLogic.Entities.ENEMY,"SWORDS_ACE")
+	'''MainLogic.make_available_cards()
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"PENTACLES_ACE")
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"CUPS_TEN")
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"SWORDS_TEN")
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"SWORDS_ACE")
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"CUPS_TEN")
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"CUPS_NINE")
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"CUPS_EIGHT")
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"CUPS_SIX")
+	MainLogic.take_card(MainLogic.Entities.PLAYER,"CUPS_SEVEN")
+	
 	MainLogic.print_cards(MainLogic.Entities.PLAYER)
-	MainLogic.print_cards(MainLogic.Entities.ENEMY)'''
+	print(MainLogic.get_combination(MainLogic.Entities.PLAYER))'''
+	do_one_round()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func do_one_round() -> float:
+	MainLogic.make_available_cards()#тусуем карты
+	
+	MainLogic.take_random_card(MainLogic.Entities.PLAYER,2)#раздаём карты, этап 1
+	MainLogic.take_random_card(MainLogic.Entities.ENEMY,2)
+	
+	
+	
+	MainLogic.take_random_card(MainLogic.Entities.SHARED,3)#раздаём карты, этап 2
+	
+	
+	
+	MainLogic.take_random_card(MainLogic.Entities.SHARED,1)#раздаём карты, этап 3
+	
+	
+	
+	MainLogic.take_random_card(MainLogic.Entities.SHARED,1)#раздаём карты, этап 4
+	MainLogic.print_cards(MainLogic.Entities.PLAYER)
+	MainLogic.print_cards(MainLogic.Entities.ENEMY)
+	MainLogic.print_cards(MainLogic.Entities.SHARED)
+	print("")
+	var combinationA = MainLogic.get_combination(MainLogic.Entities.PLAYER)
+	print(combinationA)
+	var combinationB = MainLogic.get_combination(MainLogic.Entities.ENEMY)
+	print(combinationB)
+	var result = MainLogic.compare_combinations(combinationA,combinationB)#считаем результат
+	print(result)
+	return result
