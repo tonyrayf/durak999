@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c03y2syu5adi2"]
 
+[ext_resource type="Script" uid="uid://frh67dl76bre" path="res://scripts/main_3d_script.gd" id="1_nujbj"]
 [ext_resource type="Shader" uid="uid://bnm7pk8jjs7v" path="res://shaders/pixelation.gdshader" id="1_uki8y"]
 [ext_resource type="PackedScene" uid="uid://buufho8see06q" path="res://models/glass.glb" id="2_0mw75"]
 [ext_resource type="PackedScene" uid="uid://25m24u1rxsw3" path="res://scenes/Cursor.tscn" id="2_1d72u"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://1y34a8lu0gk2" path="res://scenes/Dialog.tscn" id="2_2hcnx"]
 [ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scripts/main_camera.gd" id="2_f3gxh"]
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
@@ -27,10 +29,27 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa4y5"]
 shader = ExtResource("1_uki8y")
 shader_parameter/pixel_size = 3.000000095
+=======
+[ext_resource type="Script" path="res://scripts/main_camera.gd" id="2_f3gxh"]
+[ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
+[ext_resource type="Texture2D" uid="uid://b4ewwgpc3li15" path="res://assets/sprites/стол_шакал.png" id="5_1iatr"]
+[ext_resource type="Texture2D" uid="uid://j7m3pwxlt4vb" path="res://assets/sprites/Снимок экрана 2026-04-28 191355.png" id="6_c0t86"]
+[ext_resource type="Texture2D" uid="uid://s64js60epcvb" path="res://assets/sprites/fire1.png" id="7_gtawn"]
+[ext_resource type="PackedScene" uid="uid://dsb73lcqsccmv" path="res://models/candle.glb" id="7_veire"]
+[ext_resource type="Material" uid="uid://pcuk1da5vj2l" path="res://models/window_surface_material.tres" id="8_6mlb6"]
+[ext_resource type="Texture2D" uid="uid://bk02v0jroamfd" path="res://assets/sprites/fire2.png" id="8_uki8y"]
+[ext_resource type="Texture2D" uid="uid://bkxqhd76cb7me" path="res://assets/sprites/fire3.png" id="9_pa4y5"]
+[ext_resource type="Texture2D" uid="uid://dtu437q7dj2h1" path="res://assets/sprites/fire4.png" id="10_0mw75"]
+[ext_resource type="PackedScene" uid="uid://jon43b0xhc1" path="res://models/low_poly_vintage_telephone.glb" id="12_pa4y5"]
+>>>>>>> e3eb839 (added get_combinations() and compare_combinations() to get and compare combinatinos from player_hand+shared_hand and enemy_hand+shared_hand, now logic for poker ready, also added base relastion for one round)
 
 [sub_resource type="Environment" id="Environment_qhbaj"]
 background_mode = 1
 background_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pa4y5"]
+shader = ExtResource("1_uki8y")
+shader_parameter/pixel_size = 4.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0t86"]
 albedo_texture = ExtResource("5_2hcnx")
@@ -44,16 +63,6 @@ uv1_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_qhbaj"]
 material = SubResource("StandardMaterial3D_c0t86")
 size = Vector3(16.9, 0.285, 11.135)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4n3rj"]
-render_priority = 0
-shader = ExtResource("6_j5406")
-shader_parameter/albedo_texture = ExtResource("6_nujbj")
-shader_parameter/tint_color = Color(0.5499622, 0.7135393, 0.7373409, 1)
-shader_parameter/distortion_speed = 0.2800000133
-shader_parameter/blob_scale = 2.8400000874
-shader_parameter/spirit_size = 0.44600001792512
-shader_parameter/edge_softness = 0.5830000276925
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6mlb6"]
 animations = [{
@@ -100,6 +109,10 @@ emission_enabled = true
 emission = Color(0.62689465, 0.8301609, 1.0418965, 1)
 
 [node name="Main3d" type="Node3D" unique_id=729936244]
+script = ExtResource("1_nujbj")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=485070084]
+environment = SubResource("Environment_qhbaj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=803795169]
 
@@ -109,10 +122,6 @@ emission = Color(0.62689465, 0.8301609, 1.0418965, 1)
 material = SubResource("ShaderMaterial_pa4y5")
 offset_right = 2869.0
 offset_bottom = 1757.0
-mouse_filter = 2
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=485070084]
-environment = SubResource("Environment_qhbaj")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=426218461]
 transform = Transform3D(1, 0, 0, 0, 0.8931203, 0.44981784, 0, -0.44981784, 0.8931203, 0, 3.2862797, 3.3154807)
@@ -121,6 +130,21 @@ script = ExtResource("2_f3gxh")
 [node name="Cursor" parent="." unique_id=668848757 instance=ExtResource("2_1d72u")]
 position = Vector2(576, 332)
 
+<<<<<<< HEAD
+=======
+[node name="Card" parent="." unique_id=1076352448 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -2.814694, 0.0007146597, -0.17644143)
+
+[node name="Card2" parent="." unique_id=884679486 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0163474, 0, -0.17644143)
+
+[node name="Card3" parent="." unique_id=528795771 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0.9666822, 0, -0.17644143)
+
+[node name="Card4" parent="." unique_id=1827676108 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 2.8479621, 0, -0.17644143)
+
+>>>>>>> e3eb839 (added get_combinations() and compare_combinations() to get and compare combinatinos from player_hand+shared_hand and enemy_hand+shared_hand, now logic for poker ready, also added base relastion for one round)
 [node name="Table" type="MeshInstance3D" parent="." unique_id=643304323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1716361, -3.8096373)
 mesh = SubResource("BoxMesh_qhbaj")
@@ -135,20 +159,35 @@ spot_attenuation = -0.38
 spot_angle = 19.50645
 
 [node name="Fallen" type="Sprite3D" parent="." unique_id=741488087]
-transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, -0.16100025, 2.7090683, -10.426357)
-material_override = SubResource("ShaderMaterial_4n3rj")
+transform = Transform3D(2.3122613, 0, 0, 0, 2.352003, 0, 0, 0, 1, 0, 2.392859, -10.330587)
 shaded = true
-texture = ExtResource("6_nujbj")
-script = ExtResource("8_4n3rj")
+texture = ExtResource("6_c0t86")
 
 [node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
 transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -17.018135, 1.3739176, -4.6606407)
 
+<<<<<<< HEAD
 [node name="Cube_008" parent="Glass" index="6" unique_id=617329509]
 visible = false
 
 [node name="Cube_009" parent="Glass" index="7" unique_id=1451099581]
 visible = false
+=======
+[node name="Plane" parent="Glass" index="8" unique_id=1008295186]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
+[node name="Plane_001" parent="Glass" index="9" unique_id=1747615714]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
+[node name="Plane_003" parent="Glass" index="11" unique_id=384071840]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
+[node name="Plane_004" parent="Glass" index="12" unique_id=1191033938]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
+[node name="Plane_005" parent="Glass" index="13" unique_id=1969958182]
+surface_material_override/0 = ExtResource("8_6mlb6")
+>>>>>>> e3eb839 (added get_combinations() and compare_combinations() to get and compare combinatinos from player_hand+shared_hand and enemy_hand+shared_hand, now logic for poker ready, also added base relastion for one round)
 
 [node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 5.9210253, 0.02772379, -3.482665)
@@ -173,6 +212,7 @@ sprite_frames = SubResource("SpriteFrames_6mlb6")
 autoplay = "default"
 frame_progress = 0.4774973
 
+<<<<<<< HEAD
 [node name="Phone" type="Node3D" parent="." unique_id=434322494]
 transform = Transform3D(0.73081785, 0, -0.68257254, 0, 1, 0, 0.68257254, 0, 0.73081785, 5.6466203, 0, -0.9691222)
 
@@ -232,3 +272,18 @@ omni_attenuation = -0.782
 [editable path="Card4"]
 [editable path="Card4/blankcard"]
 [editable path="Crystal"]
+=======
+[node name="Phone" parent="." unique_id=990321613 instance=ExtResource("12_pa4y5")]
+transform = Transform3D(14.968776, 0, -27.12372, 0, 30.98, 0, 27.12372, 0, 14.968776, 5.491452, -4.7683716e-07, -0.9065194)
+
+[node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
+transform = Transform3D(-0.016413486, 0.16785285, -0.98567545, 0.0027947018, 0.98581207, 0.16782957, 0.9998613, -9.594663e-10, -0.01664971, -30.306381, 5.9393806, -4.627087)
+light_color = Color(0.8103501, 0.9999997, 0.9973399, 1)
+shadow_enabled = true
+spot_range = 55.404995
+spot_attenuation = -0.58
+spot_angle = 19.50645
+
+[editable path="Glass"]
+[editable path="Phone"]
+>>>>>>> e3eb839 (added get_combinations() and compare_combinations() to get and compare combinatinos from player_hand+shared_hand and enemy_hand+shared_hand, now logic for poker ready, also added base relastion for one round)
