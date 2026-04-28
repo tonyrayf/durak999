@@ -219,7 +219,7 @@ func compare_combinations(combinationA: Array,combinationB: Array) -> float:#с�
 		if not combinationB[i].is_empty():
 			damage -= current_cards_B[combinationB[i][0]].value*combination_damage_multiplier[i]
 		i+=1
-		print(damage)
+		#print(damage)
 	return damage
 
 func get_entity_cards(entity: int,doShared=false) -> Array[card]:#возвращает массив карт в руке для entityToGet
