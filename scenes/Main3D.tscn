@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c03y2syu5adi2"]
 
 [ext_resource type="Shader" uid="uid://bnm7pk8jjs7v" path="res://shaders/pixelation.gdshader" id="1_uki8y"]
+[ext_resource type="PackedScene" uid="uid://buufho8see06q" path="res://models/glass.glb" id="2_0mw75"]
 [ext_resource type="PackedScene" uid="uid://25m24u1rxsw3" path="res://scenes/Cursor.tscn" id="2_1d72u"]
 [ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scripts/main_camera.gd" id="2_f3gxh"]
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://j7m3pwxlt4vb" path="res://assets/sprites/Снимок экрана 2026-04-28 191355.png" id="6_c0t86"]
 [ext_resource type="Texture2D" uid="uid://s64js60epcvb" path="res://assets/sprites/fire1.png" id="7_gtawn"]
 [ext_resource type="PackedScene" uid="uid://dsb73lcqsccmv" path="res://models/candle.glb" id="7_veire"]
+[ext_resource type="Material" uid="uid://pcuk1da5vj2l" path="res://models/window_surface_material.tres" id="8_6mlb6"]
 [ext_resource type="Texture2D" uid="uid://bk02v0jroamfd" path="res://assets/sprites/fire2.png" id="8_uki8y"]
 [ext_resource type="Texture2D" uid="uid://bkxqhd76cb7me" path="res://assets/sprites/fire3.png" id="9_pa4y5"]
 [ext_resource type="Texture2D" uid="uid://dtu437q7dj2h1" path="res://assets/sprites/fire4.png" id="10_0mw75"]
@@ -90,6 +92,24 @@ transform = Transform3D(2.3122613, 0, 0, 0, 2.352003, 0, 0, 0, 1, 0, 2.392859, -
 shaded = true
 texture = ExtResource("6_c0t86")
 
+[node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
+transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -17.018135, 1.3739176, -4.6606407)
+
+[node name="Plane" parent="Glass" index="8" unique_id=1402214604]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
+[node name="Plane_001" parent="Glass" index="9" unique_id=1759263593]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
+[node name="Plane_003" parent="Glass" index="11" unique_id=1139408777]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
+[node name="Plane_004" parent="Glass" index="12" unique_id=1314980424]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
+[node name="Plane_005" parent="Glass" index="13" unique_id=1525810252]
+surface_material_override/0 = ExtResource("8_6mlb6")
+
 [node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 5.9210253, 0.02772379, -3.482665)
 
@@ -115,3 +135,14 @@ frame_progress = 0.4774973
 
 [node name="Phone" parent="." unique_id=990321613 instance=ExtResource("12_pa4y5")]
 transform = Transform3D(14.968776, 0, -27.12372, 0, 30.98, 0, 27.12372, 0, 14.968776, 5.491452, -4.7683716e-07, -0.9065194)
+
+[node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
+transform = Transform3D(-0.016413486, 0.16785285, -0.98567545, 0.0027947018, 0.98581207, 0.16782957, 0.9998613, -9.594663e-10, -0.01664971, -30.306381, 5.9393806, -4.627087)
+light_color = Color(0.8103501, 0.9999997, 0.9973399, 1)
+shadow_enabled = true
+spot_range = 55.404995
+spot_attenuation = -0.58
+spot_angle = 19.50645
+
+[editable path="Glass"]
+[editable path="Phone"]

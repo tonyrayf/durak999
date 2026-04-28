@@ -4,3 +4,7 @@
 
 [node name="Dialog" type="Node2D" unique_id=794257179]
 script = ExtResource("1_ecvbg")
+
+[node name="Label" type="Label" parent="." unique_id=7590253]
+offset_right = 40.0
+offset_bottom = 23.0
