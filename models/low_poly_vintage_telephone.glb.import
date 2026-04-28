@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dsb73lcqsccmv"
-path="res://.godot/imported/candle.glb-56226f440a3dcbacb483a388e347604c.scn"
+uid="uid://jon43b0xhc1"
+path="res://.godot/imported/low_poly_vintage_telephone.glb-68f774e4a66d357f23d5438e19f9660c.scn"
 
 [deps]
 
-source_file="res://assets/candle.glb"
-dest_files=["res://.godot/imported/candle.glb-56226f440a3dcbacb483a388e347604c.scn"]
+source_file="res://models/low_poly_vintage_telephone.glb"
+dest_files=["res://.godot/imported/low_poly_vintage_telephone.glb-68f774e4a66d357f23d5438e19f9660c.scn"]
 
 [params]
 

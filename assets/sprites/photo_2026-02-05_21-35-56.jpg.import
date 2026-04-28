@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkxqhd76cb7me"
-path.s3tc="res://.godot/imported/fire3.png-41185666ade3b639e63272396fe98c6f.s3tc.ctex"
+uid="uid://c3f0r3fu807gt"
+path.s3tc="res://.godot/imported/photo_2026-02-05_21-35-56.jpg-cf2ac4286e05418bd3ba2ae60aff13be.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/fire3.png"
-dest_files=["res://.godot/imported/fire3.png-41185666ade3b639e63272396fe98c6f.s3tc.ctex"]
+source_file="res://assets/sprites/photo_2026-02-05_21-35-56.jpg"
+dest_files=["res://.godot/imported/photo_2026-02-05_21-35-56.jpg-cf2ac4286e05418bd3ba2ae60aff13be.s3tc.ctex"]
 
 [params]
 

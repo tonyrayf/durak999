@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3f0r3fu807gt"
-path.s3tc="res://.godot/imported/photo_2026-02-05_21-35-56.jpg-2666407c085c14994ca57b8b3aa416b6.s3tc.ctex"
+uid="uid://b4ewwgpc3li15"
+path.s3tc="res://.godot/imported/стол_шакал.png-d44f9a709d66dfdf65599b26b391e5a7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/photo_2026-02-05_21-35-56.jpg"
-dest_files=["res://.godot/imported/photo_2026-02-05_21-35-56.jpg-2666407c085c14994ca57b8b3aa416b6.s3tc.ctex"]
+source_file="res://assets/sprites/стол_шакал.png"
+dest_files=["res://.godot/imported/стол_шакал.png-d44f9a709d66dfdf65599b26b391e5a7.s3tc.ctex"]
 
 [params]
 

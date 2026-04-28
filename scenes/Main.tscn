@@ -3,18 +3,24 @@
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="1_rvslj"]
 [ext_resource type="PackedScene" uid="uid://25m24u1rxsw3" path="res://scenes/Cursor.tscn" id="2_rvslj"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_rvslj"]
+size = Vector3(0.715, 0.885, 1)
+
 [node name="Node2D" type="Node2D" unique_id=551582024]
 
 [node name="Card" parent="." unique_id=459551931 instance=ExtResource("1_rvslj")]
-position = Vector2(382, 562)
+transform = Transform3D(2.005, 0, 0, 0, 2.005, 0, 0, 0, 2.005, 382, 562, 0)
 
 [node name="Card2" parent="." unique_id=861962278 instance=ExtResource("1_rvslj")]
-position = Vector2(565, 558)
+transform = Transform3D(2.005, 0, 0, 0, 2.005, 0, 0, 0, 2.005, 565, 558, 0)
 
 [node name="Card3" parent="." unique_id=822569344 instance=ExtResource("1_rvslj")]
-position = Vector2(741, 568)
+transform = Transform3D(2.005, 0, 0, 0, 2.005, 0, 0, 0, 2.005, 741, 568, 0)
 
 [node name="Card4" parent="." unique_id=196378120 instance=ExtResource("1_rvslj")]
-position = Vector2(924, 554)
+transform = Transform3D(2.005, 0, 0, 0, 2.005, 0, 0, 0, 2.005, 924, 554, 0)
 
 [node name="Cursor" parent="." unique_id=668848757 instance=ExtResource("2_rvslj")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=572938233]
+mesh = SubResource("BoxMesh_rvslj")

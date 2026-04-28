@@ -1,26 +1,34 @@
 [gd_scene format=3 uid="uid://c03y2syu5adi2"]
 
+[ext_resource type="Shader" uid="uid://bnm7pk8jjs7v" path="res://shaders/pixelation.gdshader" id="1_uki8y"]
 [ext_resource type="PackedScene" uid="uid://25m24u1rxsw3" path="res://scenes/Cursor.tscn" id="2_1d72u"]
-[ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scenes/main_camera.gd" id="2_f3gxh"]
+[ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scripts/main_camera.gd" id="2_f3gxh"]
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
-[ext_resource type="Texture2D" uid="uid://b4ewwgpc3li15" path="res://assets/стол_шакал.png" id="5_1iatr"]
-[ext_resource type="Texture2D" uid="uid://j7m3pwxlt4vb" path="res://assets/Снимок экрана 2026-04-28 191355.png" id="6_c0t86"]
-[ext_resource type="Texture2D" uid="uid://s64js60epcvb" path="res://assets/fire1.png" id="7_gtawn"]
-[ext_resource type="PackedScene" uid="uid://dsb73lcqsccmv" path="res://assets/candle.glb" id="7_veire"]
-[ext_resource type="Texture2D" uid="uid://bk02v0jroamfd" path="res://assets/fire2.png" id="8_uki8y"]
-[ext_resource type="Texture2D" uid="uid://bkxqhd76cb7me" path="res://assets/fire3.png" id="9_pa4y5"]
-[ext_resource type="Texture2D" uid="uid://dtu437q7dj2h1" path="res://assets/fire4.png" id="10_0mw75"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0t86"]
-albedo_texture = ExtResource("5_1iatr")
-
-[sub_resource type="BoxMesh" id="BoxMesh_qhbaj"]
-material = SubResource("StandardMaterial3D_c0t86")
-size = Vector3(16.9, 0.285, 11.135)
+[ext_resource type="Texture2D" uid="uid://b4ewwgpc3li15" path="res://assets/sprites/стол_шакал.png" id="5_1iatr"]
+[ext_resource type="Texture2D" uid="uid://j7m3pwxlt4vb" path="res://assets/sprites/Снимок экрана 2026-04-28 191355.png" id="6_c0t86"]
+[ext_resource type="Texture2D" uid="uid://s64js60epcvb" path="res://assets/sprites/fire1.png" id="7_gtawn"]
+[ext_resource type="PackedScene" uid="uid://dsb73lcqsccmv" path="res://models/candle.glb" id="7_veire"]
+[ext_resource type="Texture2D" uid="uid://bk02v0jroamfd" path="res://assets/sprites/fire2.png" id="8_uki8y"]
+[ext_resource type="Texture2D" uid="uid://bkxqhd76cb7me" path="res://assets/sprites/fire3.png" id="9_pa4y5"]
+[ext_resource type="Texture2D" uid="uid://dtu437q7dj2h1" path="res://assets/sprites/fire4.png" id="10_0mw75"]
+[ext_resource type="PackedScene" uid="uid://jon43b0xhc1" path="res://models/low_poly_vintage_telephone.glb" id="12_pa4y5"]
 
 [sub_resource type="Environment" id="Environment_qhbaj"]
 background_mode = 1
 background_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pa4y5"]
+shader = ExtResource("1_uki8y")
+shader_parameter/pixel_size = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0t86"]
+albedo_texture = ExtResource("5_1iatr")
+uv1_scale = Vector3(-2.135, -1.86, -2.135)
+uv1_offset = Vector3(0.565, -0.185, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qhbaj"]
+material = SubResource("StandardMaterial3D_c0t86")
+size = Vector3(16.9, 0.285, 11.135)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6mlb6"]
 animations = [{
@@ -44,6 +52,16 @@ animations = [{
 
 [node name="Main3d" type="Node3D" unique_id=729936244]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=485070084]
+environment = SubResource("Environment_qhbaj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=803795169]
+
+[node name="PixelationRect" type="ColorRect" parent="CanvasLayer" unique_id=1883102264]
+material = SubResource("ShaderMaterial_pa4y5")
+offset_right = 2869.0
+offset_bottom = 1757.0
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=426218461]
 transform = Transform3D(1, 0, 0, 0, 0.8931203, 0.44981784, 0, -0.44981784, 0.8931203, 0, 3.2862797, 3.3154807)
 script = ExtResource("2_f3gxh")
@@ -54,65 +72,46 @@ position = Vector2(576, 332)
 [node name="Card" parent="." unique_id=1076352448 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -2.814694, 0.0007146597, -0.17644143)
 
-[node name="Card2" parent="." unique_id=1960996706 instance=ExtResource("3_qhbaj")]
+[node name="Card2" parent="." unique_id=884679486 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0163474, 0, -0.17644143)
 
-[node name="Card3" parent="." unique_id=1821635361 instance=ExtResource("3_qhbaj")]
+[node name="Card3" parent="." unique_id=528795771 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0.9666822, 0, -0.17644143)
 
-[node name="Card4" parent="." unique_id=100137817 instance=ExtResource("3_qhbaj")]
+[node name="Card4" parent="." unique_id=1827676108 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 2.8479621, 0, -0.17644143)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=643304323]
+[node name="Table" type="MeshInstance3D" parent="." unique_id=643304323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1716361, -3.8096373)
 mesh = SubResource("BoxMesh_qhbaj")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=485070084]
-environment = SubResource("Environment_qhbaj")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1054341779]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.025737762, 7.567767, -3.6939588)
-visible = false
-light_color = Color(0.9999997, 0.87985057, 0.6483329, 1)
-light_energy = 16.0
-spot_range = 28.463097
-spot_angle = 41.460617
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=741488087]
+[node name="Fallen" type="Sprite3D" parent="." unique_id=741488087]
 transform = Transform3D(2.3122613, 0, 0, 0, 2.352003, 0, 0, 0, 1, 0, 2.392859, -10.330587)
 shaded = true
 texture = ExtResource("6_c0t86")
 
-[node name="candle" parent="." unique_id=1765027697 instance=ExtResource("7_veire")]
+[node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 5.9210253, 0.02772379, -3.482665)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="candle" unique_id=562023301]
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle" unique_id=562023301]
 transform = Transform3D(1.9417477, 0, 0, 0, 1.9417477, 0, 0, 0, 1.9417477, -0.0493021, 7.5544186, 0.055337906)
-light_color = Color(0.8425544, 0.7273927, 0.29779834, 1)
+light_color = Color(0.95651716, 0.6572838, 0.4094981, 1)
 light_energy = 16.0
 light_size = 1.0
 shadow_enabled = true
 omni_range = 17.162016
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="candle" unique_id=1112318450]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Candle" unique_id=1112318450]
 transform = Transform3D(2.085, 0, 0, 0, 2.085, 0, 0, 0, 2.085, 0.05722618, 7.2816935, 0)
 sprite_frames = SubResource("SpriteFrames_6mlb6")
 autoplay = "default"
 frame_progress = 0.25289065
 
-[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="candle" unique_id=964526866]
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Candle" unique_id=964526866]
 transform = Transform3D(-9.113825e-08, 0, 2.085, 0, 2.085, 0, -2.085, 0, -9.113825e-08, 0.05722618, 7.2816935, 0)
 sprite_frames = SubResource("SpriteFrames_6mlb6")
 autoplay = "default"
 frame_progress = 0.4774973
 
-[node name="candle2" parent="." unique_id=1270197863 instance=ExtResource("7_veire")]
-transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 2.8820949, 0.02772379, -3.553752)
-visible = false
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle2" unique_id=220364571]
-transform = Transform3D(1.9417477, 0, 0, 0, 1.9417477, 0, 0, 0, 1.9417477, 0.059253693, 7.5544186, -0.033926487)
-light_color = Color(0.8425544, 0.7273927, 0.29779834, 1)
-light_energy = 16.0
-light_size = 1.0
-omni_range = 11.493322
+[node name="Phone" parent="." unique_id=990321613 instance=ExtResource("12_pa4y5")]
+transform = Transform3D(14.968776, 0, -27.12372, 0, 30.98, 0, 27.12372, 0, 14.968776, 5.491452, -4.7683716e-07, -0.9065194)
