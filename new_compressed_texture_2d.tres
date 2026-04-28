@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vp44pffyqbjn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bs5pm"]
+load_path = "res://.godot/imported/8fb98f4d-7138-46f4-87ea-7013a0aa1e32.png-3bd52d489aa7b1ff9dcf554d4786fe20.s3tc.ctex"
+
+[resource]
+albedo_texture = SubResource("CompressedTexture2D_bs5pm")
+uv1_scale = Vector3(0.51, 0.085, 0.52)
+uv1_offset = Vector3(0.5, 0, -0.51)
+uv1_triplanar = true

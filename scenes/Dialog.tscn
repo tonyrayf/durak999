@@ -5,15 +5,18 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_eoslh"]
 font = ExtResource("2_nfiha")
-font_size = 50
+font_size = 62
 
-[node name="Dialog" type="Node2D" unique_id=794257179]
+[node name="Dialog" type="Node2D" unique_id=794257179 node_paths=PackedStringArray("label")]
 script = ExtResource("1_ecvbg")
+full_text = Array[String](["0Здравствуйте это та самая контора по делам духов", "1Так точно сэр"])
+label = NodePath("Label")
 
 [node name="Label" type="Label" parent="." unique_id=7590253]
-offset_left = 619.0
-offset_top = 987.0
-offset_right = 1336.0
-offset_bottom = 1039.0
+offset_left = 484.0
+offset_top = 877.0
+offset_right = 1361.0
+offset_bottom = 941.0
 text = "Попов Расселл: лололололололололололол"
 label_settings = SubResource("LabelSettings_eoslh")
+horizontal_alignment = 1
