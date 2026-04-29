@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dmote6oeo1nyx" path="res://models/tel1.glb" id="14_nujbj"]
 [ext_resource type="PackedScene" uid="uid://b3sfwp85pvaev" path="res://models/tel2.glb" id="15_j5406"]
 [ext_resource type="AudioStream" uid="uid://dhmof8j42snnh" path="res://assets/sounds/pick_up_card.wav" id="15_kugox"]
+[ext_resource type="AudioStream" uid="uid://clrml0dlqis3t" path="res://assets/sounds/123.mp3" id="16_6sirm"]
 [ext_resource type="AudioStream" uid="uid://derkiv31gj2j2" path="res://assets/sounds/phone_ringing.ogg" id="18_2dsbo"]
 [ext_resource type="Texture2D" uid="uid://donqi4gr2l7um" path="res://assets/sprites/fallen/alisa.png" id="18_flb6r"]
 [ext_resource type="Script" uid="uid://soln7wk7gx1w" path="res://scripts/phone_script.gd" id="20_gb54i"]
@@ -35,7 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://bt5ts8tg78o1a" path="res://assets/sounds/phone_pickup.ogg" id="22_m4pur"]
 [ext_resource type="PackedScene" uid="uid://ddngg3tqsp24c" path="res://models/crystal.glb" id="23_sto1q"]
 [ext_resource type="Script" path="res://models/sphere_health.gd" id="31_mvtgk"]
-[ext_resource type="Script" path="res://scripts/arcane_card_script.gd" id="34_flb6r"]
+[ext_resource type="Script" uid="uid://783wwjwiudqi" path="res://scripts/arcane_card_script.gd" id="34_flb6r"]
 [ext_resource type="PackedScene" uid="uid://cwbhnfkjlhvrj" path="res://models/ouija_main.glb" id="36_y1dhx"]
 [ext_resource type="PackedScene" uid="uid://ckyn4ab0nd407" path="res://models/ouija_mediator.glb" id="37_iurnk"]
 [ext_resource type="Script" uid="uid://dhgaqs18vegc5" path="res://scenes/ouija.gd" id="39_qufrb"]
@@ -1454,28 +1455,29 @@ mesh = SubResource("BoxMesh_qhbaj")
 [node name="Bookshelf1" parent="." unique_id=573319884 instance=ExtResource("11_m4pur")]
 transform = Transform3D(5.521201, 0, 3.3441534, 0, 6.455001, 0, -3.3441534, 0, 5.521201, -17.676222, -4.168794, -22.809626)
 
-[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="0" unique_id=1109289877]
+[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1418545048) index="0" unique_id=1267429448]
 surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
 
-[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="1" unique_id=1876480692]
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1418545048) index="1" unique_id=48771272]
 visible = false
 
-[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="2" unique_id=975846449]
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1418545048) index="2" unique_id=1352587864]
 surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
 
 [node name="Bookshelf2" parent="." unique_id=1730040174 instance=ExtResource("11_m4pur")]
 transform = Transform3D(5.1339617, 0, -3.9127302, 0, 6.455, 0, 3.9127302, 0, 5.1339617, 17.018862, -4.168794, -22.809626)
 
-[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="0" unique_id=1109289877]
+[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1418545048) index="0" unique_id=1267429448]
 surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
 
-[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="1" unique_id=1876480692]
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1418545048) index="1" unique_id=48771272]
 visible = false
 
-[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="2" unique_id=975846449]
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1418545048) index="2" unique_id=1352587864]
 surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=957371312]
+stream = ExtResource("16_6sirm")
 
 [node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
 transform = Transform3D(-0.016413487, 0.16785285, -0.98567545, 0.002794702, 0.98581207, 0.16782959, 0.9998614, -4.658627e-10, -0.016649714, -30.306381, 5.9393806, -4.627087)
@@ -1500,10 +1502,10 @@ current_texture = ExtResource("18_flb6r")
 [node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
 transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -20.818752, 1.3739176, -4.6606407)
 
-[node name="Cube_008" parent="Glass" index="6" unique_id=617329509]
+[node name="Cube_008" parent="Glass" index="6" unique_id=501703622]
 visible = false
 
-[node name="Cube_009" parent="Glass" index="7" unique_id=1451099581]
+[node name="Cube_009" parent="Glass" index="7" unique_id=1474567898]
 visible = false
 
 [node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
@@ -1541,7 +1543,7 @@ transform = Transform3D(30.145, 0, 0, 0, 30.145, 0, 0, 0, 30.145, 0, 0, 0)
 [node name="tel2" parent="Phone" unique_id=24041030 instance=ExtResource("15_j5406")]
 transform = Transform3D(30.099993, 0, 0, 0, 30.100002, 0, 0, 0, 30.100004, 0, 0, 0)
 
-[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 957945559) index="0" unique_id=1165242394]
+[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 693365092) index="0" unique_id=75959113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0)
 material_overlay = SubResource("ShaderMaterial_cvjsx")
 
@@ -1568,7 +1570,7 @@ script = ExtResource("31_mvtgk")
 omni_light = NodePath("OmniLight3D")
 sphere_mesh = NodePath("Cylinder")
 
-[node name="Cylinder" parent="Crystal" index="0" unique_id=2006000935]
+[node name="Cylinder" parent="Crystal" index="0" unique_id=1378674698]
 transform = Transform3D(1, 0, 0, 0, 0.22429883, 0, 0, 0, 1, 0.4028473, 0, -0.556983)
 surface_material_override/1 = SubResource("StandardMaterial3D_sto1q")
 
@@ -1588,10 +1590,10 @@ transform = Transform3D(0.9830922, 0, 0.18311067, 0, 1, 0, -0.18311067, 0, 0.983
 
 [node name="ouija_mediator" parent="mediator" unique_id=1198794674 instance=ExtResource("37_iurnk")]
 
-[node name="Sketchfab_model" parent="mediator/ouija_mediator" index="0" unique_id=1541232000]
+[node name="Sketchfab_model" parent="mediator/ouija_mediator" index="0" unique_id=943033071]
 transform = Transform3D(0.025, 0, 0, 0, -1.0927848e-09, 0.025, 0, -0.025, -1.0927848e-09, 0, 0, 0)
 
-[node name="Cube_001_Ouija Board_0" parent="mediator/ouija_mediator/Sketchfab_model/666b1b166a4d4ea0a9d5694afe8feefa_fbx/RootNode/Cube_001" parent_id_path=PackedInt32Array(1198794674, 229064208) index="0" unique_id=525625149]
+[node name="Cube_001_Ouija Board_0" parent="mediator/ouija_mediator/Sketchfab_model/666b1b166a4d4ea0a9d5694afe8feefa_fbx/RootNode/Cube_001" parent_id_path=PackedInt32Array(1198794674, 1353210180) index="0" unique_id=115359410]
 transform = Transform3D(0.99999976, 2.9802322e-08, -2.842171e-14, 0, 0.9999999, 1.0658141e-14, 2.842171e-14, 2.1316282e-14, 0.9999997, 0, 0, -0.021959182)
 material_overlay = SubResource("ShaderMaterial_iurnk")
 
