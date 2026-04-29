@@ -12,8 +12,6 @@ var playerHP: float = 100.0
 var enemyHP: float = 150.0
 var damageMultiplier: float = 1
 
-@onready var default_playerHP : float = playerHP
-@onready var default_enemyHP : float = enemyHP
 
 
 func play_or_fold(fold_damage_multiplier: float = 0.2) -> float:#когда вызывается, ждёт пока игрок выберет сбросить или играть
@@ -32,6 +30,7 @@ func play_or_fold(fold_damage_multiplier: float = 0.2) -> float:#когда вы
 			result *= fold_damage_multiplier
 		else:#если результат > 0, значит наша комбинация при сбросе была сильнее, никто не получает урон
 			result = 0
+	await get_tree().create_timer(0.2).timeout
 	
 	return result
 	

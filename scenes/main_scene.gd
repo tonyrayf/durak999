@@ -4,6 +4,8 @@ extends Node3D
 @export var day_label : Node
 @export var anim_player : Node
 
+var cards_on_table
+
 
 func play_sound(stream: AudioStream):
 	var player = AudioStreamPlayer2D.new()
@@ -36,11 +38,18 @@ func start_game_start() -> void:
 func _ready() -> void:
 	Global.mainScene = self
 	Global.cardsContainer = self
+	cards_on_table = [$Card1, $Card2,$Card3,$Card4,$Card5,$Card6,$Card7,$Card8,$Card9]
+	
+	for i in cards_on_table:
+		i.hide()
+	#print(Global.mainScene.cards_on_table)
 
 
 func do_battle() -> void:
 	MainLogic.make_high_arcanes_cards()
 	while true:
+		for i in cards_on_table:
+			i.hide()
 		MainLogic.take_random_high_arcane()
 		var damage = await do_one_deal()
 		if damage>0:#положительный урон-бьём мы
@@ -71,22 +80,27 @@ func do_one_deal() -> float:#сыграть одну раздачу
 	
 	MainLogic.take_random_card(MainLogic.Entities.PLAYER,2)#раздаём карты, этап 1
 	MainLogic.take_random_card(MainLogic.Entities.ENEMY,2)
+	print("flop")
 	damage_buffer = await Global.play_or_fold()#даём возможность сбросить
 	if damage_buffer!=-1:
 		return damage_buffer
+
 		
 	MainLogic.take_random_card(MainLogic.Entities.SHARED,3)#раздаём карты, этап 2
 	damage_buffer = await Global.play_or_fold()#даём возможность сбросить
+	print("turn")
 	if damage_buffer!=-1:
 		return damage_buffer
 		
 	MainLogic.take_random_card(MainLogic.Entities.SHARED,1)#раздаём карты, этап 3
 	damage_buffer = await Global.play_or_fold()#даём возможность сбросить
+	print("river")
 	if damage_buffer!=-1:
 		return damage_buffer
 		
 	MainLogic.take_random_card(MainLogic.Entities.SHARED,1)#раздаём карты, этап 4
 	damage_buffer = await Global.play_or_fold()#даём возможность сбросить
+	print("showdown")
 	if damage_buffer!=-1:
 		return damage_buffer
 		
