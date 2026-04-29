@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://ddngg3tqsp24c" path="res://models/crystal.glb" id="23_sto1q"]
 [ext_resource type="Script" path="res://models/sphere_health.gd" id="31_mvtgk"]
 [ext_resource type="PackedScene" uid="uid://3h6cxjwd82ky" path="res://models/Ouija.glb" id="32_dstl8"]
+[ext_resource type="Script" uid="uid://783wwjwiudqi" path="res://scripts/arcane_card_script.gd" id="34_flb6r"]
 
 [sub_resource type="Gradient" id="Gradient_gb54i"]
 offsets = PackedFloat32Array(0.65648854)
@@ -996,10 +997,10 @@ script = ExtResource("8_4n3rj")
 [node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
 transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -20.818752, 1.3739176, -4.6606407)
 
-[node name="Cube_008" parent="Glass" index="6" unique_id=617329509]
+[node name="Cube_008" parent="Glass" index="6" unique_id=698647854]
 visible = false
 
-[node name="Cube_009" parent="Glass" index="7" unique_id=1451099581]
+[node name="Cube_009" parent="Glass" index="7" unique_id=641083291]
 visible = false
 
 [node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
@@ -1037,7 +1038,7 @@ transform = Transform3D(30.145, 0, 0, 0, 30.145, 0, 0, 0, 30.145, 0, 0, 0)
 [node name="tel2" parent="Phone" unique_id=24041030 instance=ExtResource("15_j5406")]
 transform = Transform3D(30.099993, 0, 0, 0, 30.100002, 0, 0, 0, 30.100004, 0, 0, 0)
 
-[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 957945559) index="0" unique_id=1165242394]
+[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 1592904130) index="0" unique_id=281221957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0)
 material_overlay = SubResource("ShaderMaterial_cvjsx")
 
@@ -1064,7 +1065,7 @@ script = ExtResource("31_mvtgk")
 omni_light = NodePath("OmniLight3D")
 sphere_mesh = NodePath("Cylinder")
 
-[node name="Cylinder" parent="Crystal" index="0" unique_id=2006000935]
+[node name="Cylinder" parent="Crystal" index="0" unique_id=66847717]
 surface_material_override/1 = SubResource("StandardMaterial3D_sto1q")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Crystal" unique_id=1523867919]
@@ -1080,29 +1081,29 @@ transform = Transform3D(0.028, 0, 0, 0, 0.028, 0, 0, 0, 0.028, -0.071600914, 0, 
 visible = false
 
 [node name="Card1" parent="." unique_id=1076352448 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.4372624, -0.050603397, 0.18497486, 0, 1.3986082, 0.38261586, -0.19177176, -0.3792548, 1.386322, -3.5442472, 1.0032955, 1.0176463)
+transform = Transform3D(1.4372624, -0.050603397, 0.18497486, 0, 1.3986082, 0.38261586, -0.19177176, -0.3792548, 1.386322, -4.0587025, 1.0032955, 1.0176463)
 
 [node name="Card2" parent="." unique_id=977998021 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.4372625, -0.050603397, 0.18497486, 0, 1.3986082, 0.3826159, -0.19177178, -0.3792548, 1.3863221, -2.4800987, 1.0236645, 0.8825624)
+transform = Transform3D(1.4372625, -0.050603397, 0.18497486, 0, 1.3986082, 0.3826159, -0.19177178, -0.3792548, 1.3863221, -2.9945543, 1.0236645, 0.8825624)
 
 [node name="Card3" parent="." unique_id=2031467060 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, -2.3351612, 0, 0)
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, -2.3351612, 0, -0.3748219)
 top_level = true
 
 [node name="Card4" parent="." unique_id=1629414561 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, -1.1789298, 0, 0)
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, -1.1789298, 0, -0.3748219)
 top_level = true
 
 [node name="Card5" parent="." unique_id=1999190868 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 0, 0, 0)
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 0, 0, -0.3748219)
 top_level = true
 
 [node name="Card6" parent="." unique_id=396525228 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 1.1742779, 0, 0)
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 1.1742779, 0, -0.3748219)
 top_level = true
 
 [node name="Card7" parent="." unique_id=623761425 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 2.3768535, 0, 0)
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 2.3768535, 0, -0.3748219)
 top_level = true
 
 [node name="Card8" parent="." unique_id=1079951063 instance=ExtResource("3_qhbaj")]
@@ -1115,12 +1116,15 @@ top_level = true
 
 [node name="Card10" parent="." unique_id=1025159647 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(1.3591375, 0.17878579, -0.47252604, -0.0562825, 1.4013121, 0.36831623, 0.50207317, -0.32689482, 1.3204403, 3.139207, 1.024, 0.24144089)
+script = ExtResource("34_flb6r")
 
 [node name="Card11" parent="." unique_id=827814531 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(1.3591375, 0.17878579, -0.47252604, -0.0562825, 1.4013121, 0.36831623, 0.50207317, -0.32689482, 1.3204403, 4.158285, 1.024, 0.6344229)
+script = ExtResource("34_flb6r")
 
 [node name="Card12" parent="." unique_id=1515307721 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(1.3591375, 0.17878579, -0.47252604, -0.0562825, 1.4013121, 0.36831623, 0.50207317, -0.32689482, 1.3204403, 5.144327, 1.024, 0.9897485)
+script = ExtResource("34_flb6r")
 
 [connection signal="input_event" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_mouse_entered"]

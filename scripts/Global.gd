@@ -2,6 +2,7 @@
 extends Node
 
 signal doFold(flag: bool)
+signal cardClicked(event,card_pos: String)
 
 var cursor : Node
 var mainScene: Node3D
