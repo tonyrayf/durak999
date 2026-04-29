@@ -45,6 +45,39 @@ class card:#класс карты
 		#return card_scene
 		
 
+class arcane_card extends card:#класс карты арканы !при создании проверять, что создаваемый аркан есть в сделанных!
+	func _init(v: int) -> void:
+		self.suit = 4
+		self.value = value
+		get_card_name()
+		
+	func do_effect() -> bool:
+		if self.value not in MainLogic.DONE_HIGH_ARCANES:
+			print("Такая аркана не готова(или нет)")
+			return false
+		if self.value == Values.THE_FOOL:#Возможно, прерывает раздачу(без ущерба)? TODO НЕ УВЕРЕН
+			print("Дурак")
+		elif self.value == Values.THE_MAGICIAN:#обращает слеюущий урон в лечение ВОЗМОЖНО ЗВЕЗДА
+			Global.damage_multiplier = -1
+			print("маг")
+		elif self.value == Values.WHEEL_OF_FORTUNE:#заменить карты(общие/свои?) ВОЗМОЖНО ДУРАК
+			var buffer = MainLogic.shared_cards.size()
+			MainLogic.shared_cards.clear()
+			MainLogic.take_random_card(Entities.PLAYER,buffer)
+			print("фортуна")
+		elif self.value == Values.THE_HIGH_PRIESTESS:#подсмотреть в карты врага TODO ПОДХОДИТ
+			print("жрица")
+		elif self.value == Values.DEATH:#увеличивает урон в 4 раза ВОЗМОЖНО БАШНЯ
+			Global.damage_multiplier = 4
+			print("смерть")
+			
+		for i in range(MainLogic.high_arcanes_cards.size()):
+			if MainLogic.high_arcanes_cards[i].value == self.value:
+				MainLogic.high_arcanes_cards.pop_at(i)
+				break
+		free()
+		return true
+
 enum Suits {
 	WANDS, CUPS, SWORDS, PENTACLES, HIGHARCANES,
 }#масти карт
@@ -72,13 +105,18 @@ enum Entities {#перечесление владельцов карт
 	PLAYER, ENEMY, SHARED
 }
 
+var DONE_HIGH_ARCANES = [Values.THE_FOOL,Values.THE_MAGICIAN,Values.WHEEL_OF_FORTUNE,Values.THE_HIGH_PRIESTESS,Values.DEATH]
+
 var player_cards: Array[card] = [] #карты игрока
 var enemy_cards: Array[card] = [] #карты врага
 var shared_cards: Array[card] = [] #общие
+var high_arcanes_cards: Array[card] = [] #старшие арканы, карты игрока
 
 var availableCards: Array[card] #перемешанная колода карт, откуда мы их достаём
+var availableHighArcanes: Array[card] # колода старших арканов
 
 func make_available_cards(doShuffle: bool=true) -> void:#задаёт availableCards из мастей и номиналов
+	availableCards.clear()
 	player_cards.clear()
 	enemy_cards.clear()
 	shared_cards.clear()
@@ -255,6 +293,23 @@ func get_entity_cards(entity: int,doShared=false) -> Array[card]:#возвращ
 	else:
 		return []
 
+func make_high_arcanes_cards(doShuffle: bool=true) -> void:#задаёт доступные старшие аркейны
+	high_arcanes_cards.clear()
+	for i in DONE_HIGH_ARCANES:
+		var new_card = card.new(Suits.HIGHARCANES,i)
+		availableHighArcanes.append(new_card)
+	if doShuffle:
+		availableHighArcanes.shuffle()
+		
+func take_random_high_arcane() -> bool:#берёт в руку старших арканов случайных аркан из колоды арканов
+	if availableHighArcanes.is_empty():
+		return false
+	elif high_arcanes_cards.size() > 5:
+		return false
+	else:
+		high_arcanes_cards.append(availableHighArcanes.pop_back())
+		high_arcanes_cards[high_arcanes_cards.size()-1].spawn_card_scene()
+	return true
 
 func print_cards(entityToGet: int) -> void:#тупо print, чё
 	var current_cards = get_entity_cards(entityToGet)
