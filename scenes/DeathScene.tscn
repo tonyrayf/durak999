@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b0j2pnxw11x1h" path="res://assets/sprites/death_screen.png" id="1_ehe1v"]
 [ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="2_on6ii"]
+[ext_resource type="Shader" uid="uid://bnm7pk8jjs7v" path="res://shaders/pixelation.gdshader" id="3_on6ii"]
+[ext_resource type="Script" uid="uid://drtxpc04w3axe" path="res://scenes/death_area_2d.gd" id="4_qcfri"]
 
 [sub_resource type="Gradient" id="Gradient_qcfri"]
 offsets = PackedFloat32Array(0)
@@ -14,6 +16,18 @@ gradient = SubResource("Gradient_qcfri")
 font = ExtResource("2_on6ii")
 font_size = 222
 font_color = Color(0.99999994, 0.174173, 0.12721539, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qcfri"]
+font = ExtResource("2_on6ii")
+font_size = 125
+font_color = Color(1, 0.17254902, 0.1254902, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qcfri"]
+shader = ExtResource("3_on6ii")
+shader_parameter/pixel_size = 3.000000095
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfuu4"]
+size = Vector2(2081, 1181)
 
 [node name="DeathScene" type="Node2D" unique_id=2066177059]
 
@@ -37,3 +51,26 @@ offset_right = 1402.0
 offset_bottom = 647.0
 text = "ВЫ МЕРТВЫ"
 label_settings = SubResource("LabelSettings_3j53f")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=2097976353]
+offset_left = 573.0
+offset_top = 712.0
+offset_right = 1405.0
+offset_bottom = 936.0
+text = "нажмите на экран"
+label_settings = SubResource("LabelSettings_qcfri")
+
+[node name="PixelationRect" type="ColorRect" parent="CanvasLayer" unique_id=2036154971]
+material = SubResource("ShaderMaterial_qcfri")
+offset_right = 2869.0
+offset_bottom = 1757.0
+mouse_filter = 2
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer" unique_id=1813580302]
+script = ExtResource("4_qcfri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Area2D" unique_id=1092507122]
+position = Vector2(1030.5, 580.5)
+shape = SubResource("RectangleShape2D_lfuu4")
+
+[connection signal="input_event" from="CanvasLayer/Area2D" to="CanvasLayer/Area2D" method="_on_input_event"]

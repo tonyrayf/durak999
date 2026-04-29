@@ -1369,7 +1369,7 @@ shader_parameter/outline_width = 4.885
 [sub_resource type="BoxShape3D" id="BoxShape3D_6sirm"]
 size = Vector3(3.6413574, 0.315, 2.085)
 
-[node name="Main3d" type="Node3D" unique_id=729936244 node_paths=PackedStringArray("day_label", "anim_player")]
+[node name="1" type="Node3D" unique_id=729936244 node_paths=PackedStringArray("day_label", "anim_player")]
 script = ExtResource("1_opinn")
 day_label = NodePath("CanvasLayer/DayLabel")
 anim_player = NodePath("MainAnimationPlayer")
@@ -1667,11 +1667,11 @@ transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499
 top_level = true
 
 [node name="Card8" parent="." unique_id=1079951063 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.444594, 0.05146438, 0.11401282, 0, -1.3215971, 0.5965572, 0.12508994, -0.59433305, -1.3166697, -3.6163828, 0.90884835, -8.187577)
+transform = Transform3D(-1.4433339, -0.087724455, 0.10765956, -0.035685822, 1.3206167, 0.5976599, -0.13421138, 0.5922628, -1.3167044, -3.616, 1.178, -8.188)
 top_level = true
 
 [node name="Card9" parent="." unique_id=1964941351 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.444594, 0.05146438, 0.11401282, 0, -1.3215971, 0.5965572, 0.12508994, -0.59433305, -1.3166697, -2.5362387, 0.95328575, -8.08019)
+transform = Transform3D(-1.4370418, -0.09988083, 0.16563213, -0.023063956, 1.3213332, 0.59669554, -0.19203709, 0.5887287, -1.3111136, -2.536, 1.178, -8.08)
 top_level = true
 
 [node name="Card10" parent="." unique_id=1025159647 instance=ExtResource("3_qhbaj")]

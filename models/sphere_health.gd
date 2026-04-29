@@ -50,5 +50,8 @@ func _process(delta: float) -> void:
 		Global.mainScene.get_node("MainAnimationPlayer").play("death")
 	elif advantage >= 0.95:
 		Global.current_day += 1
-		get_tree().change_scene_to_file("res://scenes/Main3D" + str(Global.current_day) + ".tscn")
+		if Global.current_day <= 3:
+			get_tree().change_scene_to_file("res://scenes/Main3D" + str(Global.current_day) + ".tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/WinScene.tscn")
 		set_process(false)

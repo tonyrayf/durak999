@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c8cheq7406tvy"]
+
+[ext_resource type="Texture2D" uid="uid://t7dh4vvgjrkl" path="res://assets/sprites/logo.png" id="1_sh4x7"]
+[ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="2_nk6gu"]
+[ext_resource type="Shader" uid="uid://bnm7pk8jjs7v" path="res://shaders/pixelation.gdshader" id="3_nk6gu"]
+
+[sub_resource type="Gradient" id="Gradient_iwt72"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_olbwh"]
+gradient = SubResource("Gradient_iwt72")
+
+[sub_resource type="LabelSettings" id="LabelSettings_42i35"]
+font = ExtResource("2_nk6gu")
+font_size = 123
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwt72"]
+shader = ExtResource("3_nk6gu")
+shader_parameter/pixel_size = 3.000000095
+
+[node name="WinScene" type="Node2D" unique_id=1277622530]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1022842986]
+position = Vector2(952.5, 549.25)
+scale = Vector2(8.441406, 1099.4999)
+texture = SubResource("GradientTexture1D_olbwh")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=840520938]
+position = Vector2(965, 488)
+scale = Vector2(0.8527083, 0.8527083)
+texture = ExtResource("1_sh4x7")
+
+[node name="Label" type="Label" parent="." unique_id=119231769]
+offset_left = 587.0
+offset_top = 910.0
+offset_right = 1288.0
+offset_bottom = 1059.0
+text = "СПАСИБО ЗА ИГРУ!"
+label_settings = SubResource("LabelSettings_42i35")
+
+[node name="PixelationRect" type="ColorRect" parent="." unique_id=2003477597]
+material = SubResource("ShaderMaterial_iwt72")
+offset_left = -231.0
+offset_top = -131.0
+offset_right = 2638.0
+offset_bottom = 1626.0
+mouse_filter = 2

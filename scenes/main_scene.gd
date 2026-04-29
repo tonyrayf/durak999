@@ -49,7 +49,12 @@ func goto_death_scene() -> void:
 
 
 func _ready() -> void:
-	Global.high_arcanes_count = sign(Global.current_day - 1)
+	Global.current_day = int(name)
+	
+	Global.high_arcanes_count = 1 if Global.current_day != 1 else 0
+	
+	$CanvasLayer/DayLabel.text = "День " + str(Global.current_day)
+	
 	Global.mainScene = self
 	Global.cardsContainer = self
 	cards_on_table = [$Card1,$Card2,$Card3,$Card4,$Card5,$Card6,$Card7,$Card8,$Card9,$Card10,$Card11,$Card12]
