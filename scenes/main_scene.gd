@@ -29,7 +29,8 @@ func start_phone_dialog_over() -> void:
 
 
 func start_game_start() -> void:
-	MainLogic.do_battle()
+	do_battle()
+	anim_player.play("game_start")
 
 
 func _ready() -> void:

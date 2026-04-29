@@ -319,7 +319,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Array[String](["0Здравствуйте...", "0Это та самая контора по делам с духами? ", "1Здравствуйте. Так точно, сэр.", "0Мне срочно нужна ваша помощь.", "1Что у вас случилось?", "0Понимаете. Я тренер по боевым искусствам.", "0Мой ученик..... умер пытаясь совершить один сложнейший трюк.", "1Соболезную вам.", "0Так вот. Мне нужно чтобы вы упокоили его душу.", "0Мы уже месяцами с моими учениками слышим его плач по ночам.", "0Я знаю этот голос. Это точно он.", "1Имя и фамилия?", "0Иоанн Бубнов.", "1Дата рождения?", "019 марта 19XX года.", "1Оплата после ритуала.", "1Иначе вас настигнет кара.", "0Я понимаю.", "1Досвидания."])]
+"values": [Array[String](["1Досвидания."])]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -332,6 +332,101 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["start_phone_dialog_over"]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/ButtonFold:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/ButtonPlay:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/ButtonFold:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/ButtonPlay:modulate:a")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_dstl8"]
+resource_name = "game_start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ButtonFold:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ButtonPlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ButtonFold:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0.6666667, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ButtonPlay:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0.6666667, 1)
 }
 
 [sub_resource type="Animation" id="Animation_f0dhp"]
@@ -442,7 +537,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(1.3666667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["do_battle"]
+"values": ["start_game_start"]
 }
 
 [sub_resource type="Animation" id="Animation_gb54i"]
@@ -611,6 +706,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4pur"]
 _data = {
 &"RESET": SubResource("Animation_opinn"),
+&"game_start": SubResource("Animation_dstl8"),
 &"phone_dialog_over": SubResource("Animation_f0dhp"),
 &"phone_pickup": SubResource("Animation_gb54i"),
 &"phone_ringing": SubResource("Animation_cvjsx"),
@@ -631,6 +727,7 @@ anim_player = NodePath("MainAnimationPlayer")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=803795169]
 
 [node name="Dialog" parent="CanvasLayer" unique_id=794257179 instance=ExtResource("2_2hcnx")]
+full_text = Array[String](["1Досвидания."])
 autostart = false
 function_name = "start_phone_dialog_over"
 
@@ -646,6 +743,7 @@ horizontal_alignment = 1
 
 [node name="ButtonFold" type="Area2D" parent="CanvasLayer" unique_id=1121447012]
 visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(741, 871)
 script = ExtResource("4_cvjsx")
 
@@ -670,6 +768,7 @@ vertical_alignment = 1
 
 [node name="ButtonPlay" type="Area2D" parent="CanvasLayer" unique_id=69480714]
 visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(1129, 871)
 script = ExtResource("6_f0dhp")
 
@@ -756,10 +855,10 @@ script = ExtResource("8_4n3rj")
 [node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
 transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -20.818752, 1.3739176, -4.6606407)
 
-[node name="Cube_008" parent="Glass" index="6" unique_id=698647854]
+[node name="Cube_008" parent="Glass" index="6" unique_id=617329509]
 visible = false
 
-[node name="Cube_009" parent="Glass" index="7" unique_id=641083291]
+[node name="Cube_009" parent="Glass" index="7" unique_id=1451099581]
 visible = false
 
 [node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
@@ -797,7 +896,7 @@ transform = Transform3D(30.145, 0, 0, 0, 30.145, 0, 0, 0, 30.145, 0, 0, 0)
 [node name="tel2" parent="Phone" unique_id=24041030 instance=ExtResource("15_j5406")]
 transform = Transform3D(30.099993, 0, 0, 0, 30.100002, 0, 0, 0, 30.100004, 0, 0, 0)
 
-[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 1592904130) index="0" unique_id=281221957]
+[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 957945559) index="0" unique_id=1165242394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0)
 material_overlay = SubResource("ShaderMaterial_cvjsx")
 
@@ -821,7 +920,7 @@ autoplay = &"start"
 [node name="Crystal" parent="." unique_id=1992459748 instance=ExtResource("23_sto1q")]
 transform = Transform3D(0.810277, 0, 0.5860471, 0, 1, 0, -0.5860471, 0, 0.810277, -6.2034903, 0, -2.4443057)
 
-[node name="Cylinder" parent="Crystal" index="0" unique_id=66847717]
+[node name="Cylinder" parent="Crystal" index="0" unique_id=2006000935]
 surface_material_override/1 = SubResource("StandardMaterial3D_sto1q")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Crystal" unique_id=1523867919]
@@ -847,7 +946,11 @@ visible = false
 transform = Transform3D(0.028, 0, 0, 0, 0.028, 0, 0, 0, 0.028, -0.071600914, 0, -1.4633409)
 
 [connection signal="input_event" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/ButtonPlay" to="CanvasLayer/ButtonPlay" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/ButtonPlay" to="CanvasLayer/ButtonPlay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ButtonPlay" to="CanvasLayer/ButtonPlay" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Phone/Area3D" to="Phone/Area3D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Phone/Area3D" to="Phone/Area3D" method="_on_mouse_exited"]
 
