@@ -1,10 +1,15 @@
 extends Area2D
 
+var is_cooling_down = false
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if is_cooling_down:
+		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		Global.doFold.emit(false)
-		print("lololol")
+		is_cooling_down = true
+		await get_tree().create_timer(1).timeout # Ждем полсекунды
+		is_cooling_down = false
 
 
 func _on_mouse_entered() -> void:
