@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ha1dusi18mf7"
-path.s3tc="res://.godot/imported/card4.png-1cdcf016cd0f45520b56f25673fc01ca.s3tc.ctex"
+uid="uid://bkw2ycydqsl37"
+path.s3tc="res://.godot/imported/WANDS_ACE.png-2c3c0f1bd393036f8393a58c610d1bce.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/cards/card4.png"
-dest_files=["res://.godot/imported/card4.png-1cdcf016cd0f45520b56f25673fc01ca.s3tc.ctex"]
+source_file="res://cards/123/WANDS_ACE.png"
+dest_files=["res://.godot/imported/WANDS_ACE.png-2c3c0f1bd393036f8393a58c610d1bce.s3tc.ctex"]
 
 [params]
 

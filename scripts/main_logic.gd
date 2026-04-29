@@ -21,29 +21,45 @@ class card:#класс карты
 		self.name += Values.find_key(self.value)
 		self.name_extension = self.name+".jpg"
 
+	var way = "res://assets/spriets/cards/"
+	var buffer
 	func spawn_card_scene(entityToGet: int) -> void:
 		match entityToGet:
 			Entities.PLAYER:
 				if MainLogic.player_cards.size()==1:
-					Global.mainScene.cards_on_table[0].show()
+					buffer = Global.mainScene.cards_on_table[0]
+					
 				elif MainLogic.player_cards.size()==2:
-					Global.mainScene.cards_on_table[1].show()
+					buffer = Global.mainScene.cards_on_table[1]
+					
 			Entities.SHARED:
 				if MainLogic.shared_cards.size()==1:
-					Global.mainScene.cards_on_table[2].show()
+					buffer = Global.mainScene.cards_on_table[2]
+					
 				elif MainLogic.shared_cards.size()==2:
-					Global.mainScene.cards_on_table[3].show()
+					buffer = Global.mainScene.cards_on_table[3]
+					
 				elif MainLogic.shared_cards.size()==3:
-					Global.mainScene.cards_on_table[4].show()
+					buffer = Global.mainScene.cards_on_table[4]
+					
 				elif MainLogic.shared_cards.size()==4:
-					Global.mainScene.cards_on_table[5].show()
+					buffer = Global.mainScene.cards_on_table[5]
+					
 				elif MainLogic.shared_cards.size()==5:
-					Global.mainScene.cards_on_table[6].show()
+					buffer = Global.mainScene.cards_on_table[6]
+					
 			Entities.ENEMY:
 				if MainLogic.enemy_cards.size()==1:
-					Global.mainScene.cards_on_table[7].show()
+					buffer = Global.mainScene.cards_on_table[7]
+					
 				elif MainLogic.enemy_cards.size()==2:
-					Global.mainScene.cards_on_table[8].show()
+					buffer = Global.mainScene.cards_on_table[8]
+					
+		if buffer != null:
+			buffer.show()
+		else:
+			print("Ошибка: buffer пуст! Проверь условия size()")
+					
 class arcane_card extends card:#класс карты арканы !при создании проверять, что создаваемый аркан есть в сделанных!
 	func _init(v: int) -> void:
 		self.suit = 4
