@@ -9,10 +9,10 @@ var current_day : int = 1
 var playerHP: float = 100.0
 var enemyHP: float = 150.0
 
-func play_or_fold() -> bool:#вызывается, ждёт от игрока продолжения игры или сброса карт
-	var result = ""
-	var test = randi_range(0, 10)
-	if(test<10):
+func play_or_fold() -> bool: #вызывается, ждёт от игрока продолжения игры или сброса карт
+	var result : bool = true
+	
+	if true:
 		result = true
 	else:
 		result = false

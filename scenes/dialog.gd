@@ -11,6 +11,8 @@ const colors : Array = \
 @export var full_text : Array[String] = []
 @export var typing_speed : float = 0.3
 @export var autostart : bool = true
+@export var function_name : String = ""
+var destroy_func : Callable
 
 # референсы
 @export var label : Node
@@ -21,6 +23,18 @@ var current_char : float = 0 # какая сейчас по счету букв�
 @onready var current_text : String = full_text[current_page]
 @onready var page_number : int = len(full_text)
 @onready var text_len : int = len(current_text)
+
+
+func call_selected_main_function(function_name : String):
+	var main = get_tree().current_scene
+	if main.has_method(function_name):
+		main.call(function_name)
+
+
+func _get_ready() -> void:
+	current_text = full_text[current_page]
+	page_number = len(full_text)
+	text_len = len(current_text)
 
 
 func _ready() -> void:
@@ -49,4 +63,9 @@ func _process(delta: float) -> void:
 				current_char = text_len + 1
 		else:
 			label.text = ""
-			queue_free()
+			call_selected_main_function(function_name)
+			current_page = 0
+			current_char = 0
+			current_text = ""
+	
+			set_process(false)

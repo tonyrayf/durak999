@@ -7,4 +7,5 @@ func change_fallen_sprite(tex: Texture):
 
 
 func _ready() -> void:
-	change_fallen_sprite(load("res://assets/sprites/fallen/asya.png"))
+	pass
+	#change_fallen_sprite(load("res://assets/sprites/fallen/asya.png"))

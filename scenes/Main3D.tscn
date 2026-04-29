@@ -8,15 +8,14 @@
 [ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scripts/main_camera.gd" id="2_f3gxh"]
 [ext_resource type="LabelSettings" uid="uid://nlggdinhhi" path="res://resources/label_settings.tres" id="3_2dsbo"]
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
+[ext_resource type="Script" uid="uid://cib7p7o6k5kmk" path="res://scenes/button_fold.gd" id="4_cvjsx"]
 [ext_resource type="Texture2D" uid="uid://l75vu660xh1w" path="res://assets/sprites/table2x.png" id="5_2hcnx"]
-[ext_resource type="Texture2D" uid="uid://bdm1ed024rdyi" path="res://assets/sprites/cards/card2.png" id="6_2hcnx"]
+[ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="5_gb54i"]
 [ext_resource type="Shader" uid="uid://cld04hhi7xs4r" path="res://shaders/gradient_fade.gdshader" id="6_j5406"]
 [ext_resource type="Texture2D" uid="uid://dl7i50yk3hn4v" path="res://assets/sprites/fallen/ilya.png" id="6_nujbj"]
 [ext_resource type="Texture2D" uid="uid://bknbv0emlvou6" path="res://assets/sprites/table_normal_map.png" id="6_sto1q"]
 [ext_resource type="Texture2D" uid="uid://s64js60epcvb" path="res://assets/sprites/fire/fire1.png" id="7_gtawn"]
-[ext_resource type="Texture2D" uid="uid://ha1dusi18mf7" path="res://assets/sprites/cards/card4.png" id="7_sto1q"]
 [ext_resource type="PackedScene" uid="uid://dsb73lcqsccmv" path="res://models/candle.glb" id="7_veire"]
-[ext_resource type="Texture2D" uid="uid://bx1kxmlo1qwg5" path="res://assets/sprites/cards/card3.png" id="8_2dsbo"]
 [ext_resource type="Script" uid="uid://c1k3vn6gamqde" path="res://scripts/fallen_visuals.gd" id="8_4n3rj"]
 [ext_resource type="Texture2D" uid="uid://bk02v0jroamfd" path="res://assets/sprites/fire/fire2.png" id="8_uki8y"]
 [ext_resource type="Texture2D" uid="uid://bkxqhd76cb7me" path="res://assets/sprites/fire/fire3.png" id="9_pa4y5"]
@@ -28,6 +27,20 @@
 [ext_resource type="Shader" uid="uid://bijwg431d86mn" path="res://shaders/outline.gdshader" id="22_f0dhp"]
 [ext_resource type="AudioStream" uid="uid://bt5ts8tg78o1a" path="res://assets/sounds/phone_pickup.ogg" id="22_m4pur"]
 [ext_resource type="PackedScene" uid="uid://ddngg3tqsp24c" path="res://models/crystal.glb" id="23_sto1q"]
+
+[sub_resource type="Gradient" id="Gradient_gb54i"]
+offsets = PackedFloat32Array(0.65648854)
+colors = PackedColorArray(0.81934196, 0.51820725, 0.21249583, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cvjsx"]
+gradient = SubResource("Gradient_gb54i")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvjsx"]
+size = Vector2(288, 132)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m4pur"]
+font = ExtResource("5_gb54i")
+font_size = 88
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa4y5"]
 shader = ExtResource("1_uki8y")
@@ -243,6 +256,174 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Phone/tel2:rotation:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Phone/tel2:rotation:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Phone/tel2:rotation:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/Dialog:full_text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Array[String](["1Досвидания."])]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/Dialog:function_name")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["start_phone_dialog_over"]
+}
+
+[sub_resource type="Animation" id="Animation_f0dhp"]
+resource_name = "phone_dialog_over"
+length = 1.9
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone/tel2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.6203245, -0.25, 0, 0.25, 0, 0, -0.13333897, -0.10338742, 0, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Phone/tel2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(2.5594308, -0.25, 0, 0.25, 0, 0, -0.13333897, 0.42657185, 0, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Phone/tel2:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(4.070933, -0.25, 0, 0.25, 0, 0, -0.13333897, 0.6784888, 0, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Phone/tel2:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.16558576, -0.25, 0, 0.25, 0, 0, -0.13333897, 0.027597627, 0, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Phone/tel2:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.76444185, -0.25, 0, 0.25, 0, 0, -0.13333897, 0.12740698, 0, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Phone/tel2:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.5825301, -0.25, 0, 0.25, 0, 0, -0.13333897, -0.26375502, 0, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Dialog:full_text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Array[String](["1Иоанн Бубнов", "119 марта 19XX года", "1Сыграем в игру?"])]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Dialog")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_get_ready"
+}, {
+"args": [true],
+"method": &"set_process"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/Dialog:function_name")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.3666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["do_battle"]
+}
 
 [sub_resource type="Animation" id="Animation_gb54i"]
 resource_name = "phone_pickup"
@@ -313,12 +494,9 @@ tracks/5/path = NodePath("CanvasLayer/Dialog")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [false],
-"method": &"set_process"
-}, {
 "args": [true],
 "method": &"set_process"
 }]
@@ -413,37 +591,11 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4pur"]
 _data = {
 &"RESET": SubResource("Animation_opinn"),
+&"phone_dialog_over": SubResource("Animation_f0dhp"),
 &"phone_pickup": SubResource("Animation_gb54i"),
 &"phone_ringing": SubResource("Animation_cvjsx"),
 &"start": SubResource("Animation_2dsbo")
 }
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bs5pm"]
-load_path = "res://.godot/imported/8fb98f4d-7138-46f4-87ea-7013a0aa1e32.png-3bd52d489aa7b1ff9dcf554d4786fe20.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4pur"]
-albedo_texture = SubResource("CompressedTexture2D_bs5pm")
-uv1_scale = Vector3(0.51, 0.085, 0.52)
-uv1_offset = Vector3(0.5, 0, -0.51)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opinn"]
-albedo_texture = ExtResource("6_2hcnx")
-uv1_scale = Vector3(0.51, 0.085, 0.52)
-uv1_offset = Vector3(0.5, 0, -0.51)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gb54i"]
-albedo_texture = ExtResource("7_sto1q")
-uv1_scale = Vector3(0.51, 0.085, 0.52)
-uv1_offset = Vector3(0.5, 0, -0.51)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvjsx"]
-albedo_texture = ExtResource("8_2dsbo")
-uv1_scale = Vector3(0.51, 0.085, 0.52)
-uv1_offset = Vector3(0.5, 0, -0.51)
-uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sto1q"]
 transparency = 1
@@ -459,7 +611,9 @@ anim_player = NodePath("MainAnimationPlayer")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=803795169]
 
 [node name="Dialog" parent="CanvasLayer" unique_id=794257179 instance=ExtResource("2_2hcnx")]
+full_text = Array[String](["1Досвидания."])
 autostart = false
+function_name = "start_phone_dialog_over"
 
 [node name="DayLabel" type="Label" parent="CanvasLayer" unique_id=1949037490]
 modulate = Color(1, 1, 1, 0)
@@ -470,6 +624,51 @@ offset_bottom = 1080.0
 text = "День 1"
 label_settings = ExtResource("3_2dsbo")
 horizontal_alignment = 1
+
+[node name="ButtonFold" type="Area2D" parent="CanvasLayer" unique_id=1121447012]
+position = Vector2(741, 871)
+script = ExtResource("4_cvjsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ButtonFold" unique_id=1558523249]
+position = Vector2(16, -1)
+scale = Vector2(4.5200024, 2.04)
+texture = SubResource("GradientTexture2D_cvjsx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ButtonFold" unique_id=1651263935]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_cvjsx")
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonFold/CollisionShape2D" unique_id=190068391]
+offset_left = -79.0
+offset_top = -62.0
+offset_right = 81.0
+offset_bottom = 65.0
+text = "ПАС"
+label_settings = SubResource("LabelSettings_m4pur")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPlay" type="Area2D" parent="CanvasLayer" unique_id=69480714]
+position = Vector2(1129, 871)
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/ButtonPlay" unique_id=2025451782]
+position = Vector2(16.000061, 2)
+scale = Vector2(4.5200024, 2.04)
+texture = SubResource("GradientTexture2D_cvjsx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ButtonPlay" unique_id=1523445275]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_cvjsx")
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonPlay/CollisionShape2D" unique_id=1094625769]
+offset_left = -89.0
+offset_top = -62.0
+offset_right = 112.0
+offset_bottom = 65.0
+text = "ИГРАТЬ"
+label_settings = SubResource("LabelSettings_m4pur")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PixelationRect" type="ColorRect" parent="CanvasLayer" unique_id=1883102264]
 material = SubResource("ShaderMaterial_pa4y5")
@@ -503,7 +702,6 @@ spot_angle = 19.50645
 
 [node name="Fallen" type="Sprite3D" parent="." unique_id=741488087]
 transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, -0.16100025, 2.7090683, -10.426357)
-visible = false
 material_override = SubResource("ShaderMaterial_4n3rj")
 shaded = true
 texture = ExtResource("6_nujbj")
@@ -574,34 +772,6 @@ libraries/ = SubResource("AnimationLibrary_noibx")
 libraries/ = SubResource("AnimationLibrary_m4pur")
 autoplay = &"start"
 
-[node name="Card" parent="." unique_id=1076352448 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -2.814694, 0.0007146597, -0.17644143)
-visible = false
-
-[node name="Cube" parent="Card/blankcard" parent_id_path=PackedInt32Array(1076352448, 438004789) index="0" unique_id=659910391]
-surface_material_override/0 = SubResource("StandardMaterial3D_m4pur")
-
-[node name="Card2" parent="." unique_id=884679486 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0163474, 0, -0.17644143)
-visible = false
-
-[node name="Cube" parent="Card2/blankcard" parent_id_path=PackedInt32Array(884679486, 438004789) index="0" unique_id=659910391]
-surface_material_override/0 = SubResource("StandardMaterial3D_opinn")
-
-[node name="Card3" parent="." unique_id=528795771 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0.9666822, 0, -0.17644143)
-visible = false
-
-[node name="Cube" parent="Card3/blankcard" parent_id_path=PackedInt32Array(528795771, 438004789) index="0" unique_id=659910391]
-surface_material_override/0 = SubResource("StandardMaterial3D_gb54i")
-
-[node name="Card4" parent="." unique_id=1827676108 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 2.8479621, 0.029775381, -0.17644143)
-visible = false
-
-[node name="Cube" parent="Card4/blankcard" parent_id_path=PackedInt32Array(1827676108, 438004789) index="0" unique_id=659910391]
-surface_material_override/0 = SubResource("StandardMaterial3D_cvjsx")
-
 [node name="Crystal" parent="." unique_id=1992459748 instance=ExtResource("23_sto1q")]
 transform = Transform3D(0.810277, 0, 0.5860471, 0, 1, 0, -0.5860471, 0, 0.810277, -6.2034903, 0, -2.4443057)
 
@@ -616,17 +786,18 @@ light_specular = 0.0
 omni_range = 4.235962
 omni_attenuation = -0.782
 
+[node name="PlayerCards" type="Marker3D" parent="." unique_id=1721341516]
+transform = Transform3D(0.9912155, 0.12756887, 0.03489889, 0, 0.26387298, -0.96455735, -0.13225639, 0.9560842, 0.261555, -1.9349301, 1.0236645, 0.80982137)
+
+[node name="Card" parent="PlayerCards" unique_id=1076352448 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e-08, -0.55, 0, 0)
+
+[node name="Card2" parent="PlayerCards" unique_id=1999190868 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e-08, 0.55, 0, 0)
+
 [connection signal="mouse_entered" from="Phone/Area3D" to="Phone/Area3D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Phone/Area3D" to="Phone/Area3D" method="_on_mouse_exited"]
 
 [editable path="Glass"]
 [editable path="Phone/tel2"]
-[editable path="Card"]
-[editable path="Card/blankcard"]
-[editable path="Card2"]
-[editable path="Card2/blankcard"]
-[editable path="Card3"]
-[editable path="Card3/blankcard"]
-[editable path="Card4"]
-[editable path="Card4/blankcard"]
 [editable path="Crystal"]

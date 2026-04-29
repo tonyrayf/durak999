@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="durak"
+run/main_scene="uid://c03y2syu5adi2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*uid://b5qo4ierrhrr2"
-MainLogic="*uid://dglpr5yj8btus"
+MainLogic="*uid://bogr16hkb6j6n"
 
 [display]
 

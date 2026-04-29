@@ -2,14 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bgb4ebi4sx76f" path="res://scripts/card.gd" id="1_tgmmg"]
 [ext_resource type="PackedScene" uid="uid://ddyimfipsxl1e" path="res://models/blankcard.glb" id="3_4dx8l"]
-
 [ext_resource type="Material" uid="uid://v4ea1yi183p7" path="res://resources/card_material.tres" id="3_qf083"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tgmmg"]
 size = Vector3(0.7, 1, 0.01)
 
+[sub_resource type="QuadMesh" id="QuadMesh_4dx8l"]
+size = Vector2(0.64, 0.96)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf083"]
+albedo_color = Color(0.31703976, 0.21607679, 0.14093956, 1)
+
 [node name="Card" type="Area3D" unique_id=1076352448]
-transform = Transform3D(2.005, 0, 0, 0, 2.005, 0, 0, 0, 2.005, 0, 0, 0)
+transform = Transform3D(1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, 0, 0, 0)
 script = ExtResource("1_tgmmg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=746454981]
@@ -18,8 +23,21 @@ shape = SubResource("BoxShape3D_tgmmg")
 [node name="blankcard" parent="." unique_id=438004789 instance=ExtResource("3_4dx8l")]
 transform = Transform3D(0.6159655, 0, 0, 0, -2.1801185e-08, -0.65639824, 0, 0.49875298, -2.8692076e-08, 0, 0, 0)
 
-[node name="Cube" parent="blankcard" index="0" unique_id=557826952]
+[node name="Cube" parent="blankcard" index="0" unique_id=659910391]
 surface_material_override/0 = ExtResource("3_qf083")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=141203320]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Marker3D" unique_id=1219220307]
+transform = Transform3D(0.49875307, 0, 0, 0, 0.49875307, 0, 0, 0, 0.49875307, 0, 0, 0.20217341)
+light_color = Color(0.99999815, 0.9964184, 0.682113, 1)
+light_size = 1.0
+omni_range = 1.263334
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=750483534]
+transform = Transform3D(-0.9999997, 0, 8.742277e-08, 0, 0.9999996, 0, -8.742277e-08, 0, -0.9999997, 0, 0, -0.0037759317)
+mesh = SubResource("QuadMesh_4dx8l")
+surface_material_override/0 = SubResource("StandardMaterial3D_qf083")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

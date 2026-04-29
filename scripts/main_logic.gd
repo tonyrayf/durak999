@@ -21,16 +21,29 @@ class card:#класс карты
 		self.name += Values.find_key(self.value)
 		self.name_extension = self.name+".jpg"
 
-	func spawn_card_scene() -> void:
-		#if not card_scene_preload:
-		#	print("Ошибка: Прелоад сцены пустой!")
-		#	return null
-		#var card_scene = card_scene_preload.instantiate()
-		#sprite.texture = load("res://assets/cards/"+name_extension)#вот так будет, когда будут лежать спрайты карт
-		#card_scene.global_position = Vector3(0, 0, 0)
+	func spawn_card_scene(entityToGet: int) -> void:
+		var card_scene = load("res://scenes/Card.tscn")
+		
+		if not card_scene:
+			push_error("Не найдена сцена карты")
+			return
+		
+		var card_node = card_scene.instantiate()
+		
+		match entityToGet:
+			Entities.PLAYER:
+				card_node.global_position = Vector3(0, 0, 0)
+			
+			Entities.SHARED:
+				card_node.global_position = Vector3(0, 0, -3)
+			
+			Entities.ENEMY:
+				card_node.global_position = Vector3(0, 0, -6)
+		
+		Global.mainScene.add_child(card_node)
 		#Global.cardsContainer.add_child(card_scene)
 		#return card_scene
-		pass
+		
 
 enum Suits {
 	WANDS, CUPS, SWORDS, PENTACLES, HIGHARCANES,
@@ -76,18 +89,18 @@ func make_available_cards(doShuffle: bool=true) -> void:#задаёт availableC
 	if(doShuffle):
 		availableCards.shuffle()
 
-func take_random_card(entityToTake: int,amount: int=1) -> bool:#берёт в руку сущности amount случайных карт
-	var current_cards = get_entity_cards(entityToTake)
+func take_random_card(entityToGet: int,amount: int=1) -> bool:#берёт в руку сущности amount случайных карт
+	var current_cards = get_entity_cards(entityToGet)
 	for i in range(amount):
 		if availableCards.is_empty():
 			return false
 		else:
 			current_cards.append(availableCards.pop_back())
-			current_cards[current_cards.size()-1].spawn_card_scene()
+			current_cards[current_cards.size()-1].spawn_card_scene(entityToGet)
 	return true
 
-func take_card(entityToTake: int,cardName: String) -> bool:#берёт в руку сущности карту cardID
-	var current_cards = get_entity_cards(entityToTake)
+func take_card(entityToGet: int,cardName: String) -> bool:#берёт в руку сущности карту cardID
+	var current_cards = get_entity_cards(entityToGet)
 	var found_index = -1
 	for i in range(availableCards.size()):
 		if availableCards[i].name == cardName:
@@ -98,7 +111,7 @@ func take_card(entityToTake: int,cardName: String) -> bool:#берёт в рук
 	else:
 		current_cards.append(availableCards[found_index])
 		availableCards.remove_at(found_index)
-		current_cards[current_cards.size()-1].spawn_card_scene()
+		current_cards[current_cards.size()-1].spawn_card_scene(entityToGet)
 		return true
 
 func get_combination(entityToGet: int) -> Array:#возвращает массив комбанций в следующем виде:
@@ -243,8 +256,8 @@ func get_entity_cards(entity: int,doShared=false) -> Array[card]:#возвращ
 		return []
 
 
-func print_cards(entityToTake: int) -> void:#тупо print, чё
-	var current_cards = get_entity_cards(entityToTake)
+func print_cards(entityToGet: int) -> void:#тупо print, чё
+	var current_cards = get_entity_cards(entityToGet)
 	var toPrint: String = ""
 	for i in current_cards:
 		toPrint+=i.name
