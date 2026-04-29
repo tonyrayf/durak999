@@ -3,6 +3,9 @@ extends Area3D
 var dragging = false
 
 
+@export var mesh : Node
+
+
 func _on_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		dragging = event.pressed

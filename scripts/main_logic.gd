@@ -19,7 +19,7 @@ class card:#класс карты
 		self.name += Suits.find_key(self.suit)
 		self.name += "_"
 		self.name += Values.find_key(self.value)
-		self.name_extension = self.name+".jpg"
+		self.name_extension = self.name+".png"
 
 	var way = "res://assets/spriets/cards/"
 	var buffer
@@ -57,6 +57,15 @@ class card:#класс карты
 					
 		if buffer != null:
 			buffer.show()
+			
+			# Натявигаем текстуру
+			var mat = StandardMaterial3D.new()
+			mat.albedo_texture = load("res://assets/sprites/cards/" + self.name_extension)
+			mat.uv1_triplanar = true
+			mat.uv1_scale = Vector3(0.5, 0.5, 0.5)
+			mat.uv1_offset = Vector3(0.5, 0, 0.5)
+			
+			buffer.mesh.set_surface_override_material(0, mat)
 		else:
 			print("Ошибка: buffer пуст! Проверь условия size()")
 					
