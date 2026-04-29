@@ -43,9 +43,21 @@ func _ready() -> void:
 	Global.mainScene = self
 	Global.cardsContainer = self
 	cards_on_table = [$Card1,$Card2,$Card3,$Card4,$Card5,$Card6,$Card7,$Card8,$Card9,$Card10,$Card11,$Card12]
-	
 	for i in cards_on_table:
 		i.hide()
+	Global.cardClicked.connect(_on_card_input_event)
+
+
+func _on_card_input_event(event,card_name) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if card_name == "Card10":
+			print("1")
+		elif card_name == "Card11":
+			print("2")
+		elif card_name == "Card12":
+			print("3")
+
+
 
 
 func do_battle() -> void:
