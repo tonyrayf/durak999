@@ -380,6 +380,72 @@ tracks/14/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Marker3D/Camera3D:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Marker3D/Camera3D:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.000279665, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Marker3D/Camera3D:position:z")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.00048065186, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Marker3D/Camera3D:rotation:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.46656138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Marker3D/Camera3D:rotation:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/20/type = "bezier"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Marker3D/Camera3D:rotation:z")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_dstl8"]
 resource_name = "game_start"
@@ -704,6 +770,76 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_mvtgk"]
+resource_name = "the_high_priestess"
+length = 4.9666667
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker3D/Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -3.0029814, -0.3, 0.5004969, 0, 0, -3.0029814, -0.4, 0, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.65833336, 4.0333333, 4.9733334)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Marker3D/Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.000279665, -0.25, 0, 0.25, 0, -1.0445883, -0.3, 0.17414469, 0, 0, -1.0445883, -0.3, 0, 0, 0, 0.000279665, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.65833336, 4.0333333, 4.9666667)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Marker3D/Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.00048065186, -0.25, 0, 0.25, 0, -12.792709, -0.3, 2.1321986, 0, 0, -12.792709, -0.3, 0, 0, 0, 0.00048065186, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.66666675, 4.0416665, 4.9666667)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Marker3D/Camera3D:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-0.46656138, -0.25, 0, 0.25, 0, -0.68342644, -0.3, 0.036144182, 0, 0, -0.68342644, -0.3, 0.036144182, 0, 0, -0.46656138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.66666675, 4.0416665, 4.9666667)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Marker3D/Camera3D:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 3.068624, -0.3, -0.51143736, 0, 0, 3.068624, -0.3, 0, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.66666675, 4.0416665, 4.9666667)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Marker3D/Camera3D:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.017604496, -0.3, -0.0029340829, 0, 0, 0.017604496, -0.3, -0.0029340829, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.66666675, 4.0416665, 4.9666667)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4pur"]
 _data = {
 &"RESET": SubResource("Animation_opinn"),
@@ -711,7 +847,8 @@ _data = {
 &"phone_dialog_over": SubResource("Animation_f0dhp"),
 &"phone_pickup": SubResource("Animation_gb54i"),
 &"phone_ringing": SubResource("Animation_cvjsx"),
-&"start": SubResource("Animation_2dsbo")
+&"start": SubResource("Animation_2dsbo"),
+&"the_high_priestess": SubResource("Animation_mvtgk")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sto1q"]
@@ -801,8 +938,11 @@ mouse_filter = 2
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=485070084]
 environment = SubResource("Environment_qhbaj")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=426218461]
-transform = Transform3D(1, 0, 0, 0, 0.8931203, 0.44981784, 0, -0.44981784, 0.8931203, 0, 3.2862797, 3.3154807)
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1643303791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.286, 3.315)
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D" unique_id=426218461]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.89312035, 0.44981784, 0, -0.44981784, 0.89312035, 0, 0.000279665, 0.00048065186)
 script = ExtResource("2_f3gxh")
 free_look = true
 

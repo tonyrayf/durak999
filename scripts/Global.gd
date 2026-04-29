@@ -6,6 +6,7 @@ signal doFold(flag: bool)
 var cursor : Node
 var mainScene: Node3D
 var cardsContainer: Node3D
+var camera : Node
 
 var current_day : int = 1
 var playerHP: float = 100.0

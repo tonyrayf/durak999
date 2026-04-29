@@ -92,6 +92,7 @@ class arcane_card extends card:#класс карты арканы !при со�
 			MainLogic.take_random_card(Entities.PLAYER,buffer)
 			print("фортуна")
 		elif self.value == Values.THE_HIGH_PRIESTESS:#подсмотреть в карты врага TODO ПОДХОДИТ
+			Global.mainScene.get_node("MainAnimationPlayer").play("the_high_priestess")
 			print("жрица")
 		elif self.value == Values.DEATH:#увеличивает урон в 4 раза ВОЗМОЖНО БАШНЯ
 			Global.damage_multiplier = 4
@@ -114,6 +115,16 @@ class arcane_card extends card:#класс карты арканы !при со�
 					
 		if buffer != null:
 			buffer.show()
+			
+			# Натявигаем текстуру
+			print(self.name)
+			var mat = StandardMaterial3D.new()
+			mat.albedo_texture = load("res://assets/sprites/cards/" + self.name_extension)
+			mat.uv1_triplanar = true
+			mat.uv1_scale = Vector3(0.5, 0.5, 0.5)
+			mat.uv1_offset = Vector3(0.5, 0, 0.5)
+			
+			buffer.mesh.set_surface_override_material(0, mat)
 		else:
 			print("Ошибка: buffer пуст! Проверь условия size()")
 
