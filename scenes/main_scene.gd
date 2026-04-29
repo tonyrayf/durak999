@@ -47,17 +47,27 @@ func _ready() -> void:
 		i.hide()
 	Global.cardClicked.connect(_on_card_input_event)
 
-
 func _on_card_input_event(event,card_name) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		for i in [9, 10, 11]:
+			Global.mainScene.cards_on_table[i].hide()
+			
+			
 		if card_name == "Card10":
-			print("1")
+			MainLogic.high_arcanes_cards[0].do_effect()
+			MainLogic.high_arcanes_cards.pop_at(0)
 		elif card_name == "Card11":
-			print("2")
+			MainLogic.high_arcanes_cards[1].do_effect()
+			MainLogic.high_arcanes_cards.pop_at(1)
 		elif card_name == "Card12":
-			print("3")
-
-
+			MainLogic.high_arcanes_cards[2].do_effect()
+			MainLogic.high_arcanes_cards.pop_at(2)
+			
+		for i in MainLogic.high_arcanes_cards:
+			i.card_node = null
+		for i in MainLogic.high_arcanes_cards:
+			i.spawn_card_scene(1)
+			await get_tree().create_timer(0.5).timeout
 
 
 func do_battle() -> void:
