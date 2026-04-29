@@ -6,15 +6,15 @@ func _ready() -> void:
 	Global.mainScene = self
 	Global.cardsContainer = self
 	
-	do_one_deal()
+	do_battle()
 
 func do_battle() -> void:
 	while true:
-		var damage = do_one_deal()
+		var damage = await do_one_deal()
 		if damage>0:#положительный урон-бьём мы
-			Global.EnemyHP-=damage
+			Global.enemyHP-=damage
 		if damage<0:#@отрицательный-бьёт враг
-			Global.PlayerHP+=damage
+			Global.playerHP+=damage
 	
 		
 		if Global.playerHP <= 0:
@@ -25,34 +25,57 @@ func do_battle() -> void:
 			break
 		else:
 			print("PlayerHP =",Global.playerHP,"\tEnemyHP =",Global.enemyHP)
-		
-		await get_tree().create_timer(10.0).timeout
 
 func do_one_deal() -> float:#сыграть одну раздачу
+	var playerChoice: bool
+	var combinationA: Array
+	var combinationB: Array
+	var combinationBlank = [[],[],[],[],[],[],[],[],[],[]]
+	var result: float
 	MainLogic.make_available_cards()#тусуем карты
 	
 	MainLogic.take_random_card(MainLogic.Entities.PLAYER,2)#раздаём карты, этап 1
 	MainLogic.take_random_card(MainLogic.Entities.ENEMY,2)
-	
-	
-	
+	playerChoice = await Global.play_or_fold()
+	if !playerChoice:
+		print("fold")
+		combinationB = MainLogic.get_combination(MainLogic.Entities.ENEMY)
+		result = 0.2*MainLogic.compare_combinations(combinationBlank,combinationB)
+		return result
+		
 	MainLogic.take_random_card(MainLogic.Entities.SHARED,3)#раздаём карты, этап 2
-	
-	
-	
+	playerChoice = await Global.play_or_fold()
+	if !playerChoice:
+		print("fold")
+		combinationB = MainLogic.get_combination(MainLogic.Entities.ENEMY)
+		result = 0.2*MainLogic.compare_combinations(combinationBlank,combinationB)
+		return result
+		
 	MainLogic.take_random_card(MainLogic.Entities.SHARED,1)#раздаём карты, этап 3
-	
-	
-	
+	playerChoice = await Global.play_or_fold()
+	if !playerChoice:
+		print("fold")
+		combinationB = MainLogic.get_combination(MainLogic.Entities.ENEMY)
+		result = 0.2*MainLogic.compare_combinations(combinationBlank,combinationB)
+		return result
+		
 	MainLogic.take_random_card(MainLogic.Entities.SHARED,1)#раздаём карты, этап 4
+	playerChoice = await Global.play_or_fold()
+	if !playerChoice:
+		print("fold")
+		combinationB = MainLogic.get_combination(MainLogic.Entities.ENEMY)
+		result = 0.2*MainLogic.compare_combinations(combinationBlank,combinationB)
+		return result
+		
+	combinationA = MainLogic.get_combination(MainLogic.Entities.PLAYER)
+	combinationB = MainLogic.get_combination(MainLogic.Entities.ENEMY)
+	result = MainLogic.compare_combinations(combinationA,combinationB)#считаем результат
+	
 	#MainLogic.print_cards(MainLogic.Entities.PLAYER)
 	#MainLogic.print_cards(MainLogic.Entities.ENEMY)
 	#MainLogic.print_cards(MainLogic.Entities.SHARED)
 	#print("")
-	var combinationA = MainLogic.get_combination(MainLogic.Entities.PLAYER)
 	#print(combinationA)
-	var combinationB = MainLogic.get_combination(MainLogic.Entities.ENEMY)
 	#print(combinationB)
-	var result = MainLogic.compare_combinations(combinationA,combinationB)#считаем результат
-	#print(result)
+	
 	return result

@@ -6,7 +6,7 @@ class card:#класс карты
 	var name: String
 	var name_extension: String
 	
-	var card_scene_preload = preload("res://scenes/Card.tscn")
+	var card_scene_preload #= preload("res://scenes/Card.tscn")
 	var card_scene
 	
 	func _init(s: int,v: int) -> void:
@@ -21,15 +21,16 @@ class card:#класс карты
 		self.name += Values.find_key(self.value)
 		self.name_extension = self.name+".jpg"
 
-	func spawn_card_scene() -> Node3D:
-		if not card_scene_preload:
-			print("Ошибка: Прелоад сцены пустой!")
-			return null
-		var card_scene = card_scene_preload.instantiate()
+	func spawn_card_scene() -> void:
+		#if not card_scene_preload:
+		#	print("Ошибка: Прелоад сцены пустой!")
+		#	return null
+		#var card_scene = card_scene_preload.instantiate()
 		#sprite.texture = load("res://assets/cards/"+name_extension)#вот так будет, когда будут лежать спрайты карт
-		card_scene.global_position = Vector3(0, 0, 0)
-		Global.cardsContainer.add_child(card_scene)
-		return card_scene
+		#card_scene.global_position = Vector3(0, 0, 0)
+		#Global.cardsContainer.add_child(card_scene)
+		#return card_scene
+		pass
 
 enum Suits {
 	WANDS, CUPS, SWORDS, PENTACLES, HIGHARCANES,
@@ -65,6 +66,9 @@ var shared_cards: Array[card] = [] #общие
 var availableCards: Array[card] #перемешанная колода карт, откуда мы их достаём
 
 func make_available_cards(doShuffle: bool=true) -> void:#задаёт availableCards из мастей и номиналов
+	player_cards.clear()
+	enemy_cards.clear()
+	shared_cards.clear()
 	for i in range(Suits.WANDS,Suits.PENTACLES+1):
 		for j in range(Values.TWO,Values.ACE+1):
 			var new_card = card.new(i,j)
@@ -111,11 +115,11 @@ func get_combination(entityToGet: int) -> Array:#возвращает масси
 	var all_indices = range(current_cards.size())#сортируем карты по значению
 	all_indices.sort_custom(func(a, b): return current_cards[a].value > current_cards[b].value)
 	
-	var toPrint: String = ""#печатаем сортированные
-	for i in all_indices:
-		toPrint+=current_cards[i].name
-		toPrint+=" "
-	print(toPrint)
+	#var toPrint: String = ""#печатаем сортированные
+	#for i in all_indices:
+	#	toPrint+=current_cards[i].name
+	#	toPrint+=" "
+	#print(toPrint)
 	
 	var quadruplets = []#считаем четвёрки тройки пары
 	var triplets = []
@@ -237,6 +241,7 @@ func get_entity_cards(entity: int,doShared=false) -> Array[card]:#возвращ
 		return shared_cards
 	else:
 		return []
+
 
 func print_cards(entityToTake: int) -> void:#тупо print, чё
 	var current_cards = get_entity_cards(entityToTake)
