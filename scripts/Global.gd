@@ -12,6 +12,8 @@ var playerHP: float = 100.0
 var enemyHP: float = 150.0
 var damageMultiplier: float = 1
 
+@onready var default_playerHP : float = playerHP
+@onready var default_enemyHP : float = enemyHP
 
 @onready var default_playerHP : float = playerHP
 @onready var default_enemyHP : float = enemyHP
