@@ -50,7 +50,7 @@ class arcane_card extends card:#класс карты арканы !при со�
 		self.suit = 4
 		self.value = value
 		get_card_name()
-		
+	
 	func do_effect() -> bool:
 		if self.value not in MainLogic.DONE_HIGH_ARCANES:
 			print("Такая аркана не готова(или нет)")
@@ -308,7 +308,7 @@ func take_random_high_arcane() -> bool:#берёт в руку старших а
 		return false
 	else:
 		high_arcanes_cards.append(availableHighArcanes.pop_back())
-		high_arcanes_cards[high_arcanes_cards.size()-1].spawn_card_scene()
+		high_arcanes_cards[high_arcanes_cards.size()-1].spawn_card_scene(Entities.PLAYER)
 	return true
 
 func print_cards(entityToGet: int) -> void:#тупо print, чё

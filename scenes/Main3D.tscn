@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cib7p7o6k5kmk" path="res://scenes/button_fold.gd" id="4_cvjsx"]
 [ext_resource type="Texture2D" uid="uid://l75vu660xh1w" path="res://assets/sprites/table2x.png" id="5_2hcnx"]
 [ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="5_gb54i"]
+[ext_resource type="Script" uid="uid://20am1kxi2kt2" path="res://scenes/button_play.gd" id="6_f0dhp"]
 [ext_resource type="Shader" uid="uid://cld04hhi7xs4r" path="res://shaders/gradient_fade.gdshader" id="6_j5406"]
 [ext_resource type="Texture2D" uid="uid://dl7i50yk3hn4v" path="res://assets/sprites/fallen/ilya.png" id="6_nujbj"]
 [ext_resource type="Texture2D" uid="uid://bknbv0emlvou6" path="res://assets/sprites/table_normal_map.png" id="6_sto1q"]
@@ -20,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://bk02v0jroamfd" path="res://assets/sprites/fire/fire2.png" id="8_uki8y"]
 [ext_resource type="Texture2D" uid="uid://bkxqhd76cb7me" path="res://assets/sprites/fire/fire3.png" id="9_pa4y5"]
 [ext_resource type="Texture2D" uid="uid://dtu437q7dj2h1" path="res://assets/sprites/fire/fire4.png" id="10_0mw75"]
+[ext_resource type="PackedScene" uid="uid://ddy5t2k0ptw26" path="res://models/Bookshelf.glb" id="11_m4pur"]
+[ext_resource type="Texture2D" uid="uid://cxv7uggpfj14" path="res://models/Bookshelf_Image_1(rem).png" id="12_8dysu"]
+[ext_resource type="Texture2D" uid="uid://2gc0d6c0ycoq" path="res://models/Bookshelf_Image_0(rem).png" id="13_noibx"]
 [ext_resource type="PackedScene" uid="uid://dmote6oeo1nyx" path="res://models/tel1.glb" id="14_nujbj"]
 [ext_resource type="PackedScene" uid="uid://b3sfwp85pvaev" path="res://models/tel2.glb" id="15_j5406"]
 [ext_resource type="AudioStream" uid="uid://derkiv31gj2j2" path="res://assets/sounds/phone_ringing.ogg" id="18_2dsbo"]
@@ -62,6 +66,21 @@ uv1_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_qhbaj"]
 material = SubResource("StandardMaterial3D_c0t86")
 size = Vector3(16.9, 0.285, 11.135)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noibx"]
+resource_name = "servant_1"
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+albedo_texture = ExtResource("12_8dysu")
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0dhp"]
+resource_name = "servant_1_int"
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.20511743, 0.20511743, 0.20511743, 1)
+albedo_texture = ExtResource("13_noibx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4n3rj"]
 render_priority = 0
@@ -650,6 +669,7 @@ vertical_alignment = 1
 
 [node name="ButtonPlay" type="Area2D" parent="CanvasLayer" unique_id=69480714]
 position = Vector2(1129, 871)
+script = ExtResource("6_f0dhp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/ButtonPlay" unique_id=2025451782]
 position = Vector2(16.000061, 2)
@@ -691,6 +711,30 @@ position = Vector2(576, 332)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1716361, -3.8096373)
 mesh = SubResource("BoxMesh_qhbaj")
 
+[node name="Bookshelf1" parent="." unique_id=573319884 instance=ExtResource("11_m4pur")]
+transform = Transform3D(5.521201, 0, 3.3441534, 0, 6.455001, 0, -3.3441534, 0, 5.521201, -17.676222, -4.168794, -22.809626)
+
+[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="0" unique_id=1109289877]
+surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
+
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="1" unique_id=1876480692]
+visible = false
+
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="2" unique_id=975846449]
+surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
+
+[node name="Bookshelf2" parent="." unique_id=1730040174 instance=ExtResource("11_m4pur")]
+transform = Transform3D(5.1339617, 0, -3.9127302, 0, 6.455, 0, 3.9127302, 0, 5.1339617, 17.018862, -4.168794, -22.809626)
+
+[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="0" unique_id=1109289877]
+surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
+
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="1" unique_id=1876480692]
+visible = false
+
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="2" unique_id=975846449]
+surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
+
 [node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
 transform = Transform3D(-0.016413487, 0.16785285, -0.98567545, 0.002794702, 0.98581207, 0.16782959, 0.9998614, -4.658627e-10, -0.016649714, -30.306381, 5.9393806, -4.627087)
 visible = false
@@ -708,7 +752,7 @@ texture = ExtResource("6_nujbj")
 script = ExtResource("8_4n3rj")
 
 [node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
-transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -17.018135, 1.3739176, -4.6606407)
+transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -20.818752, 1.3739176, -4.6606407)
 
 [node name="Cube_008" parent="Glass" index="6" unique_id=617329509]
 visible = false
@@ -795,9 +839,13 @@ transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e
 [node name="Card2" parent="PlayerCards" unique_id=1999190868 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e-08, 0.55, 0, 0)
 
+[connection signal="input_event" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/ButtonPlay" to="CanvasLayer/ButtonPlay" method="_on_input_event"]
 [connection signal="mouse_entered" from="Phone/Area3D" to="Phone/Area3D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Phone/Area3D" to="Phone/Area3D" method="_on_mouse_exited"]
 
+[editable path="Bookshelf1"]
+[editable path="Bookshelf2"]
 [editable path="Glass"]
 [editable path="Phone/tel2"]
 [editable path="Crystal"]
