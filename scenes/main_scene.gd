@@ -44,15 +44,15 @@ func do_battle() -> void:
 		var damage = await do_one_deal()
 		if damage>0:#положительный урон-бьём мы
 			print("we damage")
-			Global.enemyHP-=damage*Global.damage_multiplier
+			Global.enemyHP-=damage*Global.damageMultiplier
 		elif damage<0:#@отрицательный-бьёт враг
 			print("enemy damages")
-			Global.playerHP+=damage*Global.damage_multiplier
+			Global.playerHP+=damage*Global.damageMultiplier
 		else:
 			print("no damage(draw on our hand better at fold)")
 			
-		if Global.damage_multiplier != 1:
-				Global.damage_multiplier = 1
+		if Global.damageMultiplier != 1:
+				Global.damageMultiplier = 1
 	
 		if Global.playerHP <= 0:
 			print("lose")

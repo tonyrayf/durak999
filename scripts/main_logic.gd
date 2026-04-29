@@ -235,6 +235,8 @@ func get_combination(entityToGet: int) -> Array:#возвращает масси
 			
 		var first_value = current_cards[all_indices[0]].value#для стрита
 		var straight_flag = true
+		if current_cards.size()<5:
+			straight_flag = false
 		for i in range(1,current_cards.size()):
 			if current_cards[all_indices[i]].value != first_value-i:
 				straight_flag = false
