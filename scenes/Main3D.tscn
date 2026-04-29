@@ -31,6 +31,7 @@
 [ext_resource type="Shader" uid="uid://bijwg431d86mn" path="res://shaders/outline.gdshader" id="22_f0dhp"]
 [ext_resource type="AudioStream" uid="uid://bt5ts8tg78o1a" path="res://assets/sounds/phone_pickup.ogg" id="22_m4pur"]
 [ext_resource type="PackedScene" uid="uid://ddngg3tqsp24c" path="res://models/crystal.glb" id="23_sto1q"]
+[ext_resource type="PackedScene" uid="uid://3h6cxjwd82ky" path="res://models/Ouija.glb" id="32_dstl8"]
 
 [sub_resource type="Gradient" id="Gradient_gb54i"]
 offsets = PackedFloat32Array(0.65648854)
@@ -835,9 +836,14 @@ transform = Transform3D(0.9912155, 0.12756887, 0.03489889, 0, 0.26387298, -0.964
 
 [node name="Card" parent="PlayerCards" unique_id=1076352448 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e-08, -0.55, 0, 0)
+visible = false
 
 [node name="Card2" parent="PlayerCards" unique_id=1999190868 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e-08, 0.55, 0, 0)
+visible = false
+
+[node name="Ouija" parent="." unique_id=330265407 instance=ExtResource("32_dstl8")]
+transform = Transform3D(0.028, 0, 0, 0, 0.028, 0, 0, 0, 0.028, -0.071600914, 0, -1.4633409)
 
 [connection signal="input_event" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_input_event"]
 [connection signal="input_event" from="CanvasLayer/ButtonPlay" to="CanvasLayer/ButtonPlay" method="_on_input_event"]
@@ -849,3 +855,4 @@ transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e
 [editable path="Glass"]
 [editable path="Phone/tel2"]
 [editable path="Crystal"]
+[editable path="Ouija"]
