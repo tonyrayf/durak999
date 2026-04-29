@@ -32,8 +32,11 @@ class card:#класс карты
 		
 		match entityToGet:
 			Entities.PLAYER:
-				card_node.global_position = Vector3(0, 0, 0)
-			
+				card_node.scale = Vector3(1.45,1.45,1.45)
+				if MainLogic.player_cards.size()==1:
+					card_node.global_position = Vector3(-2.480099, 1.023664, 0.882562)
+				elif MainLogic.player_cards.size()==2:
+					card_node.global_position = Vector3(-1.389761, 1.023664, 0.73708)
 			Entities.SHARED:
 				card_node.global_position = Vector3(0, 0, -3)
 			
@@ -232,6 +235,8 @@ func get_combination(entityToGet: int) -> Array:#возвращает масси
 			
 		var first_value = current_cards[all_indices[0]].value#для стрита
 		var straight_flag = true
+		if current_cards.size()<5:
+			straight_flag = false
 		for i in range(1,current_cards.size()):
 			if current_cards[all_indices[i]].value != first_value-i:
 				straight_flag = false

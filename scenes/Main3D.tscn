@@ -756,10 +756,10 @@ script = ExtResource("8_4n3rj")
 [node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
 transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -20.818752, 1.3739176, -4.6606407)
 
-[node name="Cube_008" parent="Glass" index="6" unique_id=617329509]
+[node name="Cube_008" parent="Glass" index="6" unique_id=698647854]
 visible = false
 
-[node name="Cube_009" parent="Glass" index="7" unique_id=1451099581]
+[node name="Cube_009" parent="Glass" index="7" unique_id=641083291]
 visible = false
 
 [node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
@@ -797,7 +797,7 @@ transform = Transform3D(30.145, 0, 0, 0, 30.145, 0, 0, 0, 30.145, 0, 0, 0)
 [node name="tel2" parent="Phone" unique_id=24041030 instance=ExtResource("15_j5406")]
 transform = Transform3D(30.099993, 0, 0, 0, 30.100002, 0, 0, 0, 30.100004, 0, 0, 0)
 
-[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 957945559) index="0" unique_id=1165242394]
+[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 1592904130) index="0" unique_id=281221957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0)
 material_overlay = SubResource("ShaderMaterial_cvjsx")
 
@@ -821,7 +821,7 @@ autoplay = &"start"
 [node name="Crystal" parent="." unique_id=1992459748 instance=ExtResource("23_sto1q")]
 transform = Transform3D(0.810277, 0, 0.5860471, 0, 1, 0, -0.5860471, 0, 0.810277, -6.2034903, 0, -2.4443057)
 
-[node name="Cylinder" parent="Crystal" index="0" unique_id=2006000935]
+[node name="Cylinder" parent="Crystal" index="0" unique_id=66847717]
 surface_material_override/1 = SubResource("StandardMaterial3D_sto1q")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Crystal" unique_id=1523867919]
