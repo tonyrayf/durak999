@@ -319,7 +319,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Array[String](["1Досвидания."])]
+"values": [Array[String](["0Здравствуйте...", "0Это та самая контора по делам с духами? ", "1Здравствуйте. Так точно, сэр.", "0Мне срочно нужна ваша помощь.", "1Что у вас случилось?", "0Понимаете. Я тренер по боевым искусствам.", "0Мой ученик..... умер пытаясь совершить один сложнейший трюк.", "1Соболезную вам.", "0Так вот. Мне нужно чтобы вы упокоили его душу.", "0Мы уже месяцами с моими учениками слышим его плач по ночам.", "0Я знаю этот голос. Это точно он.", "1Имя и фамилия?", "0Иоанн Бубнов.", "1Дата рождения?", "019 марта 19XX года.", "1Оплата после ритуала.", "1Иначе вас настигнет кара.", "0Я понимаю.", "1Досвидания."])]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -631,7 +631,6 @@ anim_player = NodePath("MainAnimationPlayer")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=803795169]
 
 [node name="Dialog" parent="CanvasLayer" unique_id=794257179 instance=ExtResource("2_2hcnx")]
-full_text = Array[String](["1Досвидания."])
 autostart = false
 function_name = "start_phone_dialog_over"
 
@@ -646,6 +645,7 @@ label_settings = ExtResource("3_2dsbo")
 horizontal_alignment = 1
 
 [node name="ButtonFold" type="Area2D" parent="CanvasLayer" unique_id=1121447012]
+visible = false
 position = Vector2(741, 871)
 script = ExtResource("4_cvjsx")
 
@@ -669,6 +669,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonPlay" type="Area2D" parent="CanvasLayer" unique_id=69480714]
+visible = false
 position = Vector2(1129, 871)
 script = ExtResource("6_f0dhp")
 

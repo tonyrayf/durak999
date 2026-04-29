@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://deg4sjfnio8a6" path="res://scenes/dialog.gd" id="1_ecvbg"]
 [ext_resource type="LabelSettings" uid="uid://nlggdinhhi" path="res://resources/label_settings.tres" id="2_nfiha"]
+[ext_resource type="AudioStream" uid="uid://bcmv6fwdlw4de" path="res://assets/sounds/mc_voice.ogg" id="3_eoslh"]
+[ext_resource type="AudioStream" uid="uid://3ne07ds4ge0l" path="res://assets/sounds/opponentvoice.ogg" id="4_d1o3a"]
 
-[node name="Dialog" type="Node2D" unique_id=794257179 node_paths=PackedStringArray("label")]
+[node name="Dialog" type="Node2D" unique_id=794257179 node_paths=PackedStringArray("label", "main_chara_voice", "opponent_voice")]
 script = ExtResource("1_ecvbg")
 full_text = Array[String](["0Здравствуйте...", "0Это та самая контора по делам с духами? ", "1Здравствуйте. Так точно, сэр.", "0Мне срочно нужна ваша помощь.", "1Что у вас случилось?", "0Понимаете. Я тренер по боевым искусствам.", "0Мой ученик..... умер пытаясь совершить один сложнейший трюк.", "1Соболезную вам.", "0Так вот. Мне нужно чтобы вы упокоили его душу.", "0Мы уже месяцами с моими учениками слышим его плач по ночам.", "0Я знаю этот голос. Это точно он.", "1Имя и фамилия?", "0Иоанн Бубнов.", "1Дата рождения?", "019 марта 19XX года.", "1Оплата после ритуала.", "1Иначе вас настигнет кара.", "0Я понимаю.", "1Досвидания."])
 label = NodePath("Label")
+main_chara_voice = NodePath("MainChara")
+opponent_voice = NodePath("Opponent")
 
 [node name="Label" type="Label" parent="." unique_id=7590253]
 offset_top = 864.0
@@ -14,3 +18,9 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 label_settings = ExtResource("2_nfiha")
 horizontal_alignment = 1
+
+[node name="MainChara" type="AudioStreamPlayer3D" parent="." unique_id=770249668]
+stream = ExtResource("3_eoslh")
+
+[node name="Opponent" type="AudioStreamPlayer3D" parent="." unique_id=2053216205]
+stream = ExtResource("4_d1o3a")
