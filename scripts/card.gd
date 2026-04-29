@@ -8,7 +8,6 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 		dragging = event.pressed
 
 
-
 func _process(_delta):
 	#print(self.global_position,self.global_rotation_degrees)
 	#if dragging:

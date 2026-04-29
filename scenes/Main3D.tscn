@@ -816,25 +816,25 @@ mesh = SubResource("BoxMesh_qhbaj")
 [node name="Bookshelf1" parent="." unique_id=573319884 instance=ExtResource("11_m4pur")]
 transform = Transform3D(5.521201, 0, 3.3441534, 0, 6.455001, 0, -3.3441534, 0, 5.521201, -17.676222, -4.168794, -22.809626)
 
-[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="0" unique_id=108346768]
+[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="0" unique_id=1109289877]
 surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
 
-[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="1" unique_id=1449404970]
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="1" unique_id=1876480692]
 visible = false
 
-[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="2" unique_id=818341547]
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="2" unique_id=975846449]
 surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
 
 [node name="Bookshelf2" parent="." unique_id=1730040174 instance=ExtResource("11_m4pur")]
 transform = Transform3D(5.1339617, 0, -3.9127302, 0, 6.455, 0, 3.9127302, 0, 5.1339617, 17.018862, -4.168794, -22.809626)
 
-[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="0" unique_id=108346768]
+[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="0" unique_id=1109289877]
 surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
 
-[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="1" unique_id=1449404970]
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="1" unique_id=1876480692]
 visible = false
 
-[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="2" unique_id=818341547]
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="2" unique_id=975846449]
 surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
 
 [node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkw2ycydqsl37"
-path.s3tc="res://.godot/imported/card1.png-803aab994574daa2a8a5de3adedebaea.s3tc.ctex"
+uid="uid://cxvj0mk5ukaeh"
+path.s3tc="res://.godot/imported/CUPS_ACE.png-586c5833d81275203c7951dd8ff41693.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/cards/card1.png"
-dest_files=["res://.godot/imported/card1.png-803aab994574daa2a8a5de3adedebaea.s3tc.ctex"]
+source_file="res://assets/sprites/cards/cups/CUPS_ACE.png"
+dest_files=["res://.godot/imported/CUPS_ACE.png-586c5833d81275203c7951dd8ff41693.s3tc.ctex"]
 
 [params]
 

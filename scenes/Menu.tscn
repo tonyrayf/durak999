@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dqc1rqwth5bvq"]
+
+[ext_resource type="Texture2D" uid="uid://cehfcrfp4ds2f" path="res://ForMenu/Play.png" id="1_11y2r"]
+[ext_resource type="Script" uid="uid://b5ymbj64ji8lo" path="res://ForMenu/Script/LoadGame.gd" id="2_o0tnf"]
+[ext_resource type="Texture2D" uid="uid://ckuxa43t8vnxu" path="res://ForMenu/Options.png" id="3_jmdev"]
+[ext_resource type="Script" uid="uid://duojw1g2oud55" path="res://ForMenu/Script/SettingsButton.gd" id="4_o0tnf"]
+[ext_resource type="Script" uid="uid://c8iatygawvutv" path="res://ForMenu/Script/VolumeSlider.gd" id="5_b6cxs"]
+[ext_resource type="Script" uid="uid://dsxka6a8ppx3x" path="res://ForMenu/Script/WindowChange.gd" id="5_jmdev"]
+[ext_resource type="Script" uid="uid://bo5qqn623tww3" path="res://ForMenu/Script/CameraMoveLeft.gd" id="7_aaywf"]
+
+[node name="Node2D" type="Node2D" unique_id=292883768]
+
+[node name="Play" type="Sprite2D" parent="." unique_id=1464168867]
+position = Vector2(30.5, -228)
+texture = ExtResource("1_11y2r")
+script = ExtResource("2_o0tnf")
+
+[node name="Options" type="Sprite2D" parent="." unique_id=909493023]
+position = Vector2(10.5, 197)
+texture = ExtResource("3_jmdev")
+script = ExtResource("4_o0tnf")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1510519869]
+
+[node name="HSlider" type="HSlider" parent="." unique_id=457992858]
+offset_left = 1390.0
+offset_top = 77.0
+offset_right = 2452.0
+offset_bottom = 209.0
+script = ExtResource("5_b6cxs")
+
+[node name="FullWindow" type="Sprite2D" parent="." unique_id=880258646]
+position = Vector2(1917, -118)
+texture = ExtResource("1_11y2r")
+script = ExtResource("5_jmdev")
+
+[node name="Options2" type="Sprite2D" parent="." unique_id=1634795270]
+position = Vector2(1238, -447)
+texture = ExtResource("3_jmdev")
+script = ExtResource("7_aaywf")

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://b5qo4ierrhrr2"
 MainLogic="*uid://bogr16hkb6j6n"
+Settings="*uid://cxqfxav6risx5"
 
 [display]
 
