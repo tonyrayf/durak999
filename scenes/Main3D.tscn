@@ -815,25 +815,25 @@ mesh = SubResource("BoxMesh_qhbaj")
 [node name="Bookshelf1" parent="." unique_id=573319884 instance=ExtResource("11_m4pur")]
 transform = Transform3D(5.521201, 0, 3.3441534, 0, 6.455001, 0, -3.3441534, 0, 5.521201, -17.676222, -4.168794, -22.809626)
 
-[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="0" unique_id=1109289877]
+[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="0" unique_id=108346768]
 surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
 
-[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="1" unique_id=1876480692]
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="1" unique_id=1449404970]
 visible = false
 
-[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="2" unique_id=975846449]
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="2" unique_id=818341547]
 surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
 
 [node name="Bookshelf2" parent="." unique_id=1730040174 instance=ExtResource("11_m4pur")]
 transform = Transform3D(5.1339617, 0, -3.9127302, 0, 6.455, 0, 3.9127302, 0, 5.1339617, 17.018862, -4.168794, -22.809626)
 
-[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="0" unique_id=1109289877]
+[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="0" unique_id=108346768]
 surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
 
-[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="1" unique_id=1876480692]
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="1" unique_id=1449404970]
 visible = false
 
-[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="2" unique_id=975846449]
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="2" unique_id=818341547]
 surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
 
 [node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
@@ -931,19 +931,43 @@ light_specular = 0.0
 omni_range = 4.235962
 omni_attenuation = -0.782
 
-[node name="PlayerCards" type="Marker3D" parent="." unique_id=1721341516]
-transform = Transform3D(0.9912155, 0.12756887, 0.03489889, 0, 0.26387298, -0.96455735, -0.13225639, 0.9560842, 0.261555, -1.9349301, 1.0236645, 0.80982137)
-
-[node name="Card" parent="PlayerCards" unique_id=1076352448 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e-08, -0.55, 0, 0)
-visible = false
-
-[node name="Card2" parent="PlayerCards" unique_id=1999190868 instance=ExtResource("3_qhbaj")]
-transform = Transform3D(1.45, 0, 0, 0, -6.338151e-08, 1.45, 0, -1.45, -6.338151e-08, 0.55, 0, 0)
-visible = false
-
 [node name="Ouija" parent="." unique_id=330265407 instance=ExtResource("32_dstl8")]
 transform = Transform3D(0.028, 0, 0, 0, 0.028, 0, 0, 0, 0.028, -0.071600914, 0, -1.4633409)
+visible = false
+
+[node name="Card1" parent="." unique_id=1076352448 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.4372624, -0.050603397, 0.18497486, 0, 1.3986082, 0.38261586, -0.19177176, -0.3792548, 1.386322, -3.5442472, 1.0032955, 1.0176463)
+
+[node name="Card2" parent="." unique_id=977998021 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.4372625, -0.050603397, 0.18497486, 0, 1.3986082, 0.3826159, -0.19177178, -0.3792548, 1.3863221, -2.4800987, 1.0236645, 0.8825624)
+
+[node name="Card3" parent="." unique_id=2031467060 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, -2.3351612, 0, 0)
+top_level = true
+
+[node name="Card4" parent="." unique_id=1629414561 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, -1.1789298, 0, 0)
+top_level = true
+
+[node name="Card5" parent="." unique_id=1999190868 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 0, 0, 0)
+top_level = true
+
+[node name="Card6" parent="." unique_id=396525228 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 1.1742779, 0, 0)
+top_level = true
+
+[node name="Card7" parent="." unique_id=623761425 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.4499999, 0, 0, 0, -6.338151e-08, 1.4499999, 0, -1.4499999, -6.338151e-08, 2.3768535, 0, 0)
+top_level = true
+
+[node name="Card8" parent="." unique_id=1079951063 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.444594, 0.05146438, 0.11401282, 0, -1.3215971, 0.5965572, 0.12508994, -0.59433305, -1.3166697, -3.6163828, 0.90884835, -8.187577)
+top_level = true
+
+[node name="Card9" parent="." unique_id=1964941351 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.444594, 0.05146438, 0.11401282, 0, -1.3215971, 0.5965572, 0.12508994, -0.59433305, -1.3166697, -2.5362387, 0.95328575, -8.08019)
+top_level = true
 
 [connection signal="input_event" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_mouse_entered"]

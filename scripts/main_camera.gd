@@ -28,8 +28,7 @@ func _ready() -> void:
 	max_tilt.y = deg_to_rad(max_tilt.y)
 	
 	toggle_free_look(free_look)
-
-
+	 
 func _process(_delta):
 	if not force_free_look:
 		if Input.is_action_just_pressed("ui_free_look"):

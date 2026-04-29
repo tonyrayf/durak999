@@ -6,8 +6,8 @@ class card:#класс карты
 	var name: String
 	var name_extension: String
 	
-	var card_scene_preload #= preload("res://scenes/Card.tscn")
-	var card_scene
+	#var card_scene_preload #= preload("res://scenes/Card.tscn")
+	var card_node: Node
 	
 	func _init(s: int,v: int) -> void:
 		self.suit = s
@@ -22,32 +22,28 @@ class card:#класс карты
 		self.name_extension = self.name+".jpg"
 
 	func spawn_card_scene(entityToGet: int) -> void:
-		var card_scene = load("res://scenes/Card.tscn")
-		
-		if not card_scene:
-			push_error("Не найдена сцена карты")
-			return
-		
-		var card_node = card_scene.instantiate()
-		
 		match entityToGet:
 			Entities.PLAYER:
-				card_node.scale = Vector3(1.45,1.45,1.45)
 				if MainLogic.player_cards.size()==1:
-					card_node.global_position = Vector3(-2.480099, 1.023664, 0.882562)
+					Global.mainScene.cards_on_table[0].show()
 				elif MainLogic.player_cards.size()==2:
-					card_node.global_position = Vector3(-1.389761, 1.023664, 0.73708)
+					Global.mainScene.cards_on_table[1].show()
 			Entities.SHARED:
-				card_node.global_position = Vector3(0, 0, -3)
-			
+				if MainLogic.shared_cards.size()==1:
+					Global.mainScene.cards_on_table[2].show()
+				elif MainLogic.shared_cards.size()==2:
+					Global.mainScene.cards_on_table[3].show()
+				elif MainLogic.shared_cards.size()==3:
+					Global.mainScene.cards_on_table[4].show()
+				elif MainLogic.shared_cards.size()==4:
+					Global.mainScene.cards_on_table[5].show()
+				elif MainLogic.shared_cards.size()==5:
+					Global.mainScene.cards_on_table[6].show()
 			Entities.ENEMY:
-				card_node.global_position = Vector3(0, 0, -6)
-		
-		Global.mainScene.add_child(card_node)
-		#Global.cardsContainer.add_child(card_scene)
-		#return card_scene
-		
-
+				if MainLogic.enemy_cards.size()==1:
+					Global.mainScene.cards_on_table[7].show()
+				elif MainLogic.enemy_cards.size()==2:
+					Global.mainScene.cards_on_table[8].show()
 class arcane_card extends card:#класс карты арканы !при создании проверять, что создаваемый аркан есть в сделанных!
 	func _init(v: int) -> void:
 		self.suit = 4
@@ -134,6 +130,7 @@ func make_available_cards(doShuffle: bool=true) -> void:#задаёт availableC
 func take_random_card(entityToGet: int,amount: int=1) -> bool:#берёт в руку сущности amount случайных карт
 	var current_cards = get_entity_cards(entityToGet)
 	for i in range(amount):
+		await get_tree().create_timer(0.2).timeout
 		if availableCards.is_empty():
 			return false
 		else:

@@ -10,7 +10,7 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 
 
 func _process(_delta):
-	#print(self.global_position)
+	#print(self.global_position,self.global_rotation_degrees)
 	#if dragging:
 	#	var mouse_pos = get_viewport().get_mouse_position()
 	#	var camera = get_viewport().get_camera_3d()
