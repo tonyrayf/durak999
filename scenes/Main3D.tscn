@@ -1427,9 +1427,11 @@ offset_right = 2869.0
 offset_bottom = 1757.0
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=650961884]
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=650961884]
 offset_right = 2222.0
 offset_bottom = 1290.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=485070084]
 environment = SubResource("Environment_qhbaj")
@@ -1565,9 +1567,6 @@ transform = Transform3D(0.810277, 0, 0.5860471, 0, 1, 0, -0.5860471, 0, 0.810277
 script = ExtResource("31_mvtgk")
 omni_light = NodePath("OmniLight3D")
 sphere_mesh = NodePath("Cylinder")
-player_advantage_color = null
-enemy_advantage_color = null
-neutral_advantage_color = null
 
 [node name="Cylinder" parent="Crystal" index="0" unique_id=2006000935]
 transform = Transform3D(1, 0, 0, 0, 0.22429883, 0, 0, 0, 1, 0.4028473, 0, -0.556983)

@@ -52,6 +52,10 @@ func _process(delta: float) -> void:
 		tween.set_trans(Tween.TRANS_SINE)
 		tween.set_ease(Tween.EASE_IN_OUT)
 		
-		tween.tween_property()
+		var node = Global.mainScene.get_node("CanvasLayer").get_node("Fade")
+		
+		tween.tween_property(node, "color", Color(node.color,1), 0.5)
+		await tween.finished
+		get_tree().reload_current_scene()
 		
 		Global.mainScene.get_node("MainAnimationPlayer").play("death")
