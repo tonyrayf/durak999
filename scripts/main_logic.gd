@@ -59,6 +59,7 @@ class card:#класс карты
 			buffer.show()
 			
 			# Натявигаем текстуру
+			print(self.name)
 			var mat = StandardMaterial3D.new()
 			mat.albedo_texture = load("res://assets/sprites/cards/" + self.name_extension)
 			mat.uv1_triplanar = true
