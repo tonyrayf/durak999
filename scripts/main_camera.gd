@@ -4,14 +4,14 @@ extends Camera3D
 @export var free_look : bool = false
 @export var force_free_look : bool = true
 @export var sensitivity : float = 0.005
-@export var max_tilt : Vector2 = Vector2(40, 50)        # в градусах
+@export var max_tilt : Vector2 = Vector2(20, 24) # в градусах
 
 @onready var start_rotation = rotation
 
 
 func toggle_free_look(active : bool = not free_look) -> void:
 	free_look = active
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN if active else Input.MOUSE_MODE_VISIBLE)
+	# Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN if active else Input.MOUSE_MODE_VISIBLE)
 	
 	if not active:
 		# Плавный переход до начального rotation
