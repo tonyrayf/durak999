@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://u76x03s8ovj0" path="res://scripts/main_camera.gd" id="2_f3gxh"]
 [ext_resource type="LabelSettings" uid="uid://nlggdinhhi" path="res://resources/label_settings.tres" id="3_2dsbo"]
 [ext_resource type="PackedScene" uid="uid://dt75flq2yfdq0" path="res://scenes/Card.tscn" id="3_qhbaj"]
-[ext_resource type="Script" uid="uid://cib7p7o6k5kmk" path="res://scenes/button_fold.gd" id="4_cvjsx"]
+[ext_resource type="Script" uid="uid://cib7p7o6k5kmk" path="res://scripts/button_fold.gd" id="4_cvjsx"]
 [ext_resource type="Texture2D" uid="uid://l75vu660xh1w" path="res://assets/sprites/table2x.png" id="5_2hcnx"]
 [ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="5_gb54i"]
-[ext_resource type="Script" uid="uid://20am1kxi2kt2" path="res://scenes/button_play.gd" id="6_f0dhp"]
+[ext_resource type="Script" uid="uid://20am1kxi2kt2" path="res://scripts/button_play.gd" id="6_f0dhp"]
 [ext_resource type="Shader" uid="uid://cld04hhi7xs4r" path="res://shaders/gradient_fade.gdshader" id="6_j5406"]
 [ext_resource type="Texture2D" uid="uid://dl7i50yk3hn4v" path="res://assets/sprites/fallen/ilya.png" id="6_nujbj"]
 [ext_resource type="Texture2D" uid="uid://bknbv0emlvou6" path="res://assets/sprites/table_normal_map.png" id="6_sto1q"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dmote6oeo1nyx" path="res://models/tel1.glb" id="14_nujbj"]
 [ext_resource type="PackedScene" uid="uid://b3sfwp85pvaev" path="res://models/tel2.glb" id="15_j5406"]
 [ext_resource type="AudioStream" uid="uid://derkiv31gj2j2" path="res://assets/sounds/phone_ringing.ogg" id="18_2dsbo"]
+[ext_resource type="Texture2D" uid="uid://donqi4gr2l7um" path="res://assets/sprites/fallen/alisa.png" id="18_flb6r"]
 [ext_resource type="Script" uid="uid://soln7wk7gx1w" path="res://scripts/phone_script.gd" id="20_gb54i"]
 [ext_resource type="Shader" uid="uid://bijwg431d86mn" path="res://shaders/outline.gdshader" id="22_f0dhp"]
 [ext_resource type="AudioStream" uid="uid://bt5ts8tg78o1a" path="res://assets/sounds/phone_pickup.ogg" id="22_m4pur"]
@@ -447,6 +448,23 @@ tracks/20/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_flb6r"]
+resource_name = "death"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"goto_death_scene"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_dstl8"]
 resource_name = "game_start"
 tracks/0/type = "value"
@@ -843,6 +861,7 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4pur"]
 _data = {
 &"RESET": SubResource("Animation_opinn"),
+&"death": SubResource("Animation_flb6r"),
 &"game_start": SubResource("Animation_dstl8"),
 &"phone_dialog_over": SubResource("Animation_f0dhp"),
 &"phone_pickup": SubResource("Animation_gb54i"),
@@ -956,25 +975,25 @@ mesh = SubResource("BoxMesh_qhbaj")
 [node name="Bookshelf1" parent="." unique_id=573319884 instance=ExtResource("11_m4pur")]
 transform = Transform3D(5.521201, 0, 3.3441534, 0, 6.455001, 0, -3.3441534, 0, 5.521201, -17.676222, -4.168794, -22.809626)
 
-[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="0" unique_id=108346768]
+[node name="servant_1_001_servant_1_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="0" unique_id=1109289877]
 surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
 
-[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="1" unique_id=1449404970]
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="1" unique_id=1876480692]
 visible = false
 
-[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 742944464) index="2" unique_id=818341547]
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf1/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(573319884, 1600185214) index="2" unique_id=975846449]
 surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
 
 [node name="Bookshelf2" parent="." unique_id=1730040174 instance=ExtResource("11_m4pur")]
 transform = Transform3D(5.1339617, 0, -3.9127302, 0, 6.455, 0, 3.9127302, 0, 5.1339617, 17.018862, -4.168794, -22.809626)
 
-[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="0" unique_id=108346768]
+[node name="servant_1_001_servant_1_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="0" unique_id=1109289877]
 surface_material_override/0 = SubResource("StandardMaterial3D_noibx")
 
-[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="1" unique_id=1449404970]
+[node name="servant_1_001_servant_1_glass_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="1" unique_id=1876480692]
 visible = false
 
-[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 742944464) index="2" unique_id=818341547]
+[node name="servant_1_001_servant_1_int_0" parent="Bookshelf2/Sketchfab_model/servant_1_fbx/RootNode/servant_1_001" parent_id_path=PackedInt32Array(1730040174, 1600185214) index="2" unique_id=975846449]
 surface_material_override/0 = SubResource("StandardMaterial3D_f0dhp")
 
 [node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
@@ -988,10 +1007,12 @@ spot_angle = 19.50645
 
 [node name="Fallen" type="Sprite3D" parent="." unique_id=741488087]
 transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, -0.16100025, 2.7090683, -10.426357)
+visible = false
 material_override = SubResource("ShaderMaterial_4n3rj")
 shaded = true
 texture = ExtResource("6_nujbj")
 script = ExtResource("8_4n3rj")
+current_texture = ExtResource("18_flb6r")
 
 [node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
 transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -20.818752, 1.3739176, -4.6606407)

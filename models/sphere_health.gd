@@ -45,3 +45,6 @@ func _process(delta: float) -> void:
 	
 	# Применяем полученный цвет
 	set_light(final_color)
+	
+	if advantage <= -1:
+		Global.mainScene.get_node("MainAnimationPlayer").play("death")

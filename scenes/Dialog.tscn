@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1y34a8lu0gk2"]
 
-[ext_resource type="Script" uid="uid://deg4sjfnio8a6" path="res://scenes/dialog.gd" id="1_ecvbg"]
+[ext_resource type="Script" uid="uid://deg4sjfnio8a6" path="res://scripts/dialog.gd" id="1_ecvbg"]
 [ext_resource type="LabelSettings" uid="uid://nlggdinhhi" path="res://resources/label_settings.tres" id="2_nfiha"]
 [ext_resource type="AudioStream" uid="uid://bcmv6fwdlw4de" path="res://assets/sounds/mc_voice.ogg" id="3_eoslh"]
 [ext_resource type="AudioStream" uid="uid://3ne07ds4ge0l" path="res://assets/sounds/opponentvoice.ogg" id="4_d1o3a"]

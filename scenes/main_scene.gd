@@ -35,6 +35,10 @@ func start_game_start() -> void:
 	anim_player.play("game_start")
 
 
+func goto_death_scene() -> void:
+	get_tree().change_scene_to_file("res://scenes/DeathScene.tscn")
+
+
 func _ready() -> void:
 	Global.mainScene = self
 	Global.cardsContainer = self

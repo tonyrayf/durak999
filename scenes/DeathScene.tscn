@@ -1,3 +1,39 @@
 [gd_scene format=3 uid="uid://dxixk4j8xhrg1"]
 
+[ext_resource type="Texture2D" uid="uid://b0j2pnxw11x1h" path="res://assets/sprites/death_screen.png" id="1_ehe1v"]
+[ext_resource type="FontFile" uid="uid://l44aor7vddde" path="res://assets/Dimkin Regular.ttf" id="2_on6ii"]
+
+[sub_resource type="Gradient" id="Gradient_qcfri"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lfuu4"]
+gradient = SubResource("Gradient_qcfri")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3j53f"]
+font = ExtResource("2_on6ii")
+font_size = 222
+font_color = Color(0.99999994, 0.174173, 0.12721539, 1)
+
 [node name="DeathScene" type="Node2D" unique_id=2066177059]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=903575107]
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer" unique_id=1727979385]
+position = Vector2(963.2787, 538.2644)
+rotation = -3.1415927
+scale = Vector2(1925.5574, -1077.5289)
+texture = SubResource("GradientTexture1D_lfuu4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=2030742024]
+position = Vector2(950.87573, 540.5)
+scale = Vector2(0.43749997, 0.4375)
+texture = ExtResource("1_ehe1v")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1784475341]
+offset_left = 570.0
+offset_top = 423.0
+offset_right = 1402.0
+offset_bottom = 647.0
+text = "ВЫ МЕРТВЫ"
+label_settings = SubResource("LabelSettings_3j53f")
