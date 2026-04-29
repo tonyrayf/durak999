@@ -38,19 +38,20 @@ func start_game_start() -> void:
 func _ready() -> void:
 	Global.mainScene = self
 	Global.cardsContainer = self
-	cards_on_table = [$Card1, $Card2,$Card3,$Card4,$Card5,$Card6,$Card7,$Card8,$Card9]
+	cards_on_table = [$Card1, $Card2,$Card3,$Card4,$Card5,$Card6,$Card7,$Card8,$Card9,$Card10,$Card11,$Card12]
 	
 	for i in cards_on_table:
 		i.hide()
-	#print(Global.mainScene.cards_on_table)
+	print(MainLogic)
 
 
 func do_battle() -> void:
 	MainLogic.make_high_arcanes_cards()
 	while true:
-		for i in cards_on_table:
-			i.hide()
+		for i in range(9):
+			cards_on_table[i].hide()
 		MainLogic.take_random_high_arcane()
+		print("ASDASDASDASDSAD",MainLogic.high_arcanes_cards)
 		var damage = await do_one_deal()
 		if damage>0:#положительный урон-бьём мы
 			print("we damage")

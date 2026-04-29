@@ -93,6 +93,19 @@ class arcane_card extends card:#класс карты арканы !при со�
 				break
 		free()
 		return true
+	
+	func spawn_card_scene(entityToGet: int) -> void:
+		if MainLogic.high_arcanes_cards.size()==1:
+			buffer = Global.mainScene.cards_on_table[9]
+		elif MainLogic.high_arcanes_cards.size()==2:
+			buffer = Global.mainScene.cards_on_table[10]
+		elif MainLogic.high_arcanes_cards.size()==3:
+			buffer = Global.mainScene.cards_on_table[11]
+					
+		if buffer != null:
+			buffer.show()
+		else:
+			print("Ошибка: buffer пуст! Проверь условия size()")
 
 enum Suits {
 	WANDS, CUPS, SWORDS, PENTACLES, HIGHARCANES,
@@ -315,15 +328,15 @@ func get_entity_cards(entity: int,doShared=false) -> Array[card]:#возвращ
 func make_high_arcanes_cards(doShuffle: bool=true) -> void:#задаёт доступные старшие аркейны
 	high_arcanes_cards.clear()
 	for i in DONE_HIGH_ARCANES:
-		var new_card = card.new(Suits.HIGHARCANES,i)
+		var new_card = arcane_card.new(Suits.HIGHARCANES)
 		availableHighArcanes.append(new_card)
 	if doShuffle:
 		availableHighArcanes.shuffle()
-		
+
 func take_random_high_arcane() -> bool:#берёт в руку старших арканов случайных аркан из колоды арканов
 	if availableHighArcanes.is_empty():
 		return false
-	elif high_arcanes_cards.size() > 5:
+	elif high_arcanes_cards.size() > 3:
 		return false
 	else:
 		high_arcanes_cards.append(availableHighArcanes.pop_back())

@@ -31,7 +31,7 @@
 [ext_resource type="Shader" uid="uid://bijwg431d86mn" path="res://shaders/outline.gdshader" id="22_f0dhp"]
 [ext_resource type="AudioStream" uid="uid://bt5ts8tg78o1a" path="res://assets/sounds/phone_pickup.ogg" id="22_m4pur"]
 [ext_resource type="PackedScene" uid="uid://ddngg3tqsp24c" path="res://models/crystal.glb" id="23_sto1q"]
-[ext_resource type="Script" uid="uid://cuhovskek1rp6" path="res://models/sphere_health.gd" id="31_mvtgk"]
+[ext_resource type="Script" path="res://models/sphere_health.gd" id="31_mvtgk"]
 [ext_resource type="PackedScene" uid="uid://3h6cxjwd82ky" path="res://models/Ouija.glb" id="32_dstl8"]
 
 [sub_resource type="Gradient" id="Gradient_gb54i"]
@@ -856,10 +856,10 @@ script = ExtResource("8_4n3rj")
 [node name="Glass" parent="." unique_id=1140095715 instance=ExtResource("2_0mw75")]
 transform = Transform3D(-1.1474239e-07, 0, 2.625, 0, 2.625, 0, -2.625, 0, -1.1474239e-07, -20.818752, 1.3739176, -4.6606407)
 
-[node name="Cube_008" parent="Glass" index="6" unique_id=617329509]
+[node name="Cube_008" parent="Glass" index="6" unique_id=698647854]
 visible = false
 
-[node name="Cube_009" parent="Glass" index="7" unique_id=1451099581]
+[node name="Cube_009" parent="Glass" index="7" unique_id=641083291]
 visible = false
 
 [node name="Candle" parent="." unique_id=666674395 instance=ExtResource("7_veire")]
@@ -897,7 +897,7 @@ transform = Transform3D(30.145, 0, 0, 0, 30.145, 0, 0, 0, 30.145, 0, 0, 0)
 [node name="tel2" parent="Phone" unique_id=24041030 instance=ExtResource("15_j5406")]
 transform = Transform3D(30.099993, 0, 0, 0, 30.100002, 0, 0, 0, 30.100004, 0, 0, 0)
 
-[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 957945559) index="0" unique_id=1165242394]
+[node name="telephone_telephone_MAT_0" parent="Phone/tel2/Sketchfab_model/ef2a8bd928b84d2a882340d7ec68379c_fbx/RootNode/telephone" parent_id_path=PackedInt32Array(24041030, 1592904130) index="0" unique_id=281221957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0)
 material_overlay = SubResource("ShaderMaterial_cvjsx")
 
@@ -924,7 +924,7 @@ script = ExtResource("31_mvtgk")
 omni_light = NodePath("OmniLight3D")
 sphere_mesh = NodePath("Cylinder")
 
-[node name="Cylinder" parent="Crystal" index="0" unique_id=2006000935]
+[node name="Cylinder" parent="Crystal" index="0" unique_id=66847717]
 surface_material_override/1 = SubResource("StandardMaterial3D_sto1q")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Crystal" unique_id=1523867919]
@@ -972,6 +972,15 @@ top_level = true
 [node name="Card9" parent="." unique_id=1964941351 instance=ExtResource("3_qhbaj")]
 transform = Transform3D(1.444594, 0.05146438, 0.11401282, 0, -1.3215971, 0.5965572, 0.12508994, -0.59433305, -1.3166697, -2.5362387, 0.95328575, -8.08019)
 top_level = true
+
+[node name="Card10" parent="." unique_id=1025159647 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.3591375, 0.17878579, -0.47252604, -0.0562825, 1.4013121, 0.36831623, 0.50207317, -0.32689482, 1.3204403, 3.139207, 1.024, 0.24144089)
+
+[node name="Card11" parent="." unique_id=827814531 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.3591375, 0.17878579, -0.47252604, -0.0562825, 1.4013121, 0.36831623, 0.50207317, -0.32689482, 1.3204403, 4.158285, 1.024, 0.6344229)
+
+[node name="Card12" parent="." unique_id=1515307721 instance=ExtResource("3_qhbaj")]
+transform = Transform3D(1.3591375, 0.17878579, -0.47252604, -0.0562825, 1.4013121, 0.36831623, 0.50207317, -0.32689482, 1.3204403, 5.144327, 1.024, 0.9897485)
 
 [connection signal="input_event" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/ButtonFold" to="CanvasLayer/ButtonFold" method="_on_mouse_entered"]
