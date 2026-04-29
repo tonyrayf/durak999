@@ -1514,7 +1514,6 @@ autoplay = true
 
 [node name="WindowSpotLight" type="SpotLight3D" parent="." unique_id=1897665040]
 transform = Transform3D(-0.016413487, 0.16785285, -0.98567545, 0.002794702, 0.98581207, 0.16782959, 0.9998614, -4.658627e-10, -0.016649714, -30.306381, 5.9393806, -4.627087)
-visible = false
 light_color = Color(0.8103501, 0.9999997, 0.9973399, 1)
 shadow_enabled = true
 spot_range = 55.404995
