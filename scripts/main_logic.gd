@@ -229,6 +229,7 @@ func get_combination(entityToGet: int) -> Array:#возвращает масси
 	
 	var first_in_line_value = 0
 	var counter_value = 1
+	if all_indices.is_empty(): return []  # Выходим, если массив пустой
 	var current_value = current_cards[all_indices[0]].value
 	for i in range(1,all_indices.size()):
 		if current_cards[all_indices[i]].value == current_value:
@@ -358,7 +359,7 @@ func make_high_arcanes_cards(doShuffle: bool=true) -> void:#задаёт дос�
 func take_random_high_arcane() -> bool:#берёт в руку старших арканов случайных аркан из колоды арканов
 	if availableHighArcanes.is_empty():
 		return false
-	elif high_arcanes_cards.size() >= 1:
+	elif high_arcanes_cards.size() >= Global.high_arcanes_count:
 		return false
 	else:
 		high_arcanes_cards.append(availableHighArcanes.pop_back())

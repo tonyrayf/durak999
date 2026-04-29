@@ -36,6 +36,7 @@ func start_ritual() -> void:
 
 func start_spirit_spawn() -> void:
 	anim_player.play("spirit_spawn")
+	$CanvasLayer/Dialog.function_name = ""
 
 
 func start_game_start() -> void:
@@ -48,6 +49,7 @@ func goto_death_scene() -> void:
 
 
 func _ready() -> void:
+	Global.high_arcanes_count = sign(Global.current_day - 1)
 	Global.mainScene = self
 	Global.cardsContainer = self
 	cards_on_table = [$Card1,$Card2,$Card3,$Card4,$Card5,$Card6,$Card7,$Card8,$Card9,$Card10,$Card11,$Card12]
@@ -151,3 +153,10 @@ func do_one_deal() -> float:#сыграть одну раздачу
 	#print(combinationB)
 	
 	return result
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("mouse_rb"):
+		$CheckCamera.current = true
+	elif Input.is_action_just_released("mouse_rb"):
+		Global.camera.current = true

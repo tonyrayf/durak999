@@ -46,16 +46,9 @@ func _process(delta: float) -> void:
 	# Применяем полученный цвет
 	set_light(final_color)
 	
-	if advantage <= -1:
-		var tween = create_tween()
-		
-		tween.set_trans(Tween.TRANS_SINE)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		
-		var node = Global.mainScene.get_node("CanvasLayer").get_node("Fade")
-		
-		tween.tween_property(node, "color", Color(node.color,1), 0.5)
-		await tween.finished
-		get_tree().reload_current_scene()
-		
+	if advantage <= -0.95:
 		Global.mainScene.get_node("MainAnimationPlayer").play("death")
+	elif advantage >= 0.95:
+		Global.current_day += 1
+		get_tree().change_scene_to_file("res://scenes/Main3D" + str(Global.current_day) + ".tscn")
+		set_process(false)
