@@ -308,7 +308,7 @@ func take_random_high_arcane() -> bool:#берёт в руку старших а
 		return false
 	else:
 		high_arcanes_cards.append(availableHighArcanes.pop_back())
-		high_arcanes_cards[high_arcanes_cards.size()-1].spawn_card_scene()
+		high_arcanes_cards[high_arcanes_cards.size()-1].spawn_card_scene(Entities.PLAYER)
 	return true
 
 func print_cards(entityToGet: int) -> void:#тупо print, чё
