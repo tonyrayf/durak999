@@ -47,4 +47,11 @@ func _process(delta: float) -> void:
 	set_light(final_color)
 	
 	if advantage <= -1:
+		var tween = create_tween()
+		
+		tween.set_trans(Tween.TRANS_SINE)
+		tween.set_ease(Tween.EASE_IN_OUT)
+		
+		tween.tween_property()
+		
 		Global.mainScene.get_node("MainAnimationPlayer").play("death")

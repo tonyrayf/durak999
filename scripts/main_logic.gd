@@ -58,6 +58,8 @@ class card:#класс карты
 		if buffer != null:
 			buffer.show()
 			
+			Global.mainScene.get_node("CardPickUpSound").playing = true
+			
 			#print(self.name)
 			var mat = StandardMaterial3D.new()
 			mat.albedo_texture = load("res://assets/sprites/cards/" + self.name_extension)
@@ -114,6 +116,8 @@ class arcane_card extends card:#класс карты арканы !при со�
 					
 		if buffer != null:
 			buffer.show()
+			
+			Global.mainScene.get_node("CardPickUpSound").playing = true
 			
 			# Натявигаем текстуру
 			print(self.name)
@@ -358,7 +362,7 @@ func make_high_arcanes_cards(doShuffle: bool=true) -> void:#задаёт дос�
 func take_random_high_arcane() -> bool:#берёт в руку старших арканов случайных аркан из колоды арканов
 	if availableHighArcanes.is_empty():
 		return false
-	elif high_arcanes_cards.size() > 3:
+	elif high_arcanes_cards.size() >= Global.high_arcanes_count:
 		return false
 	else:
 		high_arcanes_cards.append(availableHighArcanes.pop_back())

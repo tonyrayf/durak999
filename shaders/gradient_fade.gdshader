@@ -7,6 +7,7 @@ uniform float distortion_speed : hint_range(0.0, 5.0) = 0.5;
 uniform float blob_scale : hint_range(1.0, 20.0) = 4.0;
 uniform float spirit_size : hint_range(0.1, 1.5) = 0.8;
 uniform float edge_softness : hint_range(0.0, 1.0) = 0.5;
+uniform float alpha : hint_range(0.0, 1.0) = 1.0;
 
 vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
 
@@ -52,5 +53,5 @@ void fragment() {
     float alpha_mask = smoothstep(threshold, threshold - edge_softness, dist);
     
     ALBEDO = tex.rgb * tint_color.rgb;
-    ALPHA = tex.a * alpha_mask;
+    ALPHA = tex.a * alpha_mask * alpha;
 }

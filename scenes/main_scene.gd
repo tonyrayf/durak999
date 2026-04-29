@@ -30,6 +30,14 @@ func start_phone_dialog_over() -> void:
 	anim_player.play("phone_dialog_over")
 
 
+func start_ritual() -> void:
+	anim_player.play("start_ritual")
+
+
+func start_spirit_spawn() -> void:
+	anim_player.play("spirit_spawn")
+
+
 func start_game_start() -> void:
 	do_battle()
 	anim_player.play("game_start")

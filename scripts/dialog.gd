@@ -81,3 +81,12 @@ func _process(delta: float) -> void:
 			current_text = ""
 	
 			set_process(false)
+	
+	if Input.is_action_just_pressed("ui_f1"):
+		label.text = ""
+		call_selected_main_function(function_name)
+		current_page = 0
+		current_char = 0
+		current_text = ""
+
+		set_process(false)
