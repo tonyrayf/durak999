@@ -31,10 +31,10 @@ func play_or_fold(fold_damage_multiplier: float = 0.2) -> float:#когда вы
 	
 	return result
 	
-func _input(event):
-	# Проверяем, что нажата клавиша и что это событие "нажатия" (а не отпускания)
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_A:
-			doFold.emit(false)
-		elif event.keycode == KEY_D: 
-			doFold.emit(true)
+#func _input(event):
+#	# Проверяем, что нажата клавиша и что это событие "нажатия" (а не отпускания)
+#	if event is InputEventKey and event.pressed:
+#		if event.keycode == KEY_A:
+#			doFold.emit(false)
+#		elif event.keycode == KEY_D: 
+#			doFold.emit(true)
