@@ -12,6 +12,10 @@ var playerHP: float = 100.0
 var enemyHP: float = 150.0
 var damageMultiplier: float = 1
 
+@onready var default_playerHP : float = playerHP
+@onready var default_enemyHP : float = enemyHP
+
+
 func play_or_fold(fold_damage_multiplier: float = 0.2) -> float:#когда вызывается, ждёт пока игрок выберет сбросить или играть
 	var result: float#если возвращается -1, значит игрок НЕ СБРОСИЛ. Если возвращается другое число, значит столько нужно нанести игроку 
 	

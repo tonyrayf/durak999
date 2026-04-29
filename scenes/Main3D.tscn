@@ -31,6 +31,7 @@
 [ext_resource type="Shader" uid="uid://bijwg431d86mn" path="res://shaders/outline.gdshader" id="22_f0dhp"]
 [ext_resource type="AudioStream" uid="uid://bt5ts8tg78o1a" path="res://assets/sounds/phone_pickup.ogg" id="22_m4pur"]
 [ext_resource type="PackedScene" uid="uid://ddngg3tqsp24c" path="res://models/crystal.glb" id="23_sto1q"]
+[ext_resource type="Script" uid="uid://cuhovskek1rp6" path="res://models/sphere_health.gd" id="31_mvtgk"]
 [ext_resource type="PackedScene" uid="uid://3h6cxjwd82ky" path="res://models/Ouija.glb" id="32_dstl8"]
 
 [sub_resource type="Gradient" id="Gradient_gb54i"]
@@ -917,8 +918,11 @@ libraries/ = SubResource("AnimationLibrary_noibx")
 libraries/ = SubResource("AnimationLibrary_m4pur")
 autoplay = &"start"
 
-[node name="Crystal" parent="." unique_id=1992459748 instance=ExtResource("23_sto1q")]
+[node name="Crystal" parent="." unique_id=1992459748 node_paths=PackedStringArray("omni_light", "sphere_mesh") instance=ExtResource("23_sto1q")]
 transform = Transform3D(0.810277, 0, 0.5860471, 0, 1, 0, -0.5860471, 0, 0.810277, -6.2034903, 0, -2.4443057)
+script = ExtResource("31_mvtgk")
+omni_light = NodePath("OmniLight3D")
+sphere_mesh = NodePath("Cylinder")
 
 [node name="Cylinder" parent="Crystal" index="0" unique_id=2006000935]
 surface_material_override/1 = SubResource("StandardMaterial3D_sto1q")
